@@ -1,0 +1,60 @@
+{
+  "name": "seothemes/core",
+  "type": "wordpress-plugin",
+  "description": "Core functionality plugin for SEO Themes Genesis child themes.",
+  "keywords": [
+    "WordPress",
+    "wordpress-plugin",
+    "genesis-framework"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Lee Anthony",
+      "homepage": "https://seothemes.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/seothemes/core/issues",
+    "source": "https://github.com/seothemes/core"
+  },
+  "require": {
+    "php": ">=5.6"
+  },
+  "require-dev": {
+    "php": "^5.6|^7",
+    "brain/monkey": "^2.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "v0.5.0",
+    "phpcompatibility/phpcompatibility-wp": "2.0.0",
+    "phpunit/phpunit": "~5.7.9",
+    "seothemes/genesis-config-exporter": "@dev",
+    "squizlabs/php_codesniffer": "^3.4.2",
+    "wp-coding-standards/wpcs": "2.1.0",
+    "wp-phpunit/wp-phpunit": "^5.1"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SeoThemes\\GenesisStarterTheme\\Tests\\Unit\\": "tests/php/unit/",
+      "SeoThemes\\GenesisStarterTheme\\Tests\\Integration\\": "tests/php/integration/"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-order": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "stylelint": [
+      "stylelint './assets/scss/**/*.scss' --fix"
+    ],
+    "install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+    "phpcs": "phpcs --standard=WordPress --extensions=php -p -s lib config templates tests functions.php",
+    "phpcbf": "phpcbf --standard=WordPress --extensions=php -p lib config templates tests functions.php",
+    "test-unit": "composer dump && \"vendor/bin/phpunit\" --testsuite unit --color=always",
+    "test-integration": "composer dump && \"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always"
+  }
+}
