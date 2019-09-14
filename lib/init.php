@@ -11,44 +11,26 @@
 
 namespace SeoThemes\Core;
 
+add_action( 'genesis_setup', __NAMESPACE__ . '\init', 100 );
 /**
- * Autoload classes.
+ * Initialize plugin files.
  *
- * @noinspection PhpUnhandledExceptionInspection
+ * Loads between Genesis and child theme functions.php.
+ * 
+ * @since 1.0.0
+ *
+ * @return void
  */
-\spl_autoload_register(
-	function ( $class ) {
-		if ( strpos( $class, __NAMESPACE__ ) === false ) {
-			return;
-		}
+function init() {
 
-		$class_dir  = dirname( __DIR__ ) . '/lib/classes/';
-		$class_name = strtolower( str_replace( __NAMESPACE__, '', $class ) );
-		$class_file = str_replace( '\\', '-', $class_name );
-
-		/* @noinspection PhpIncludeInspection */
-		require_once "{$class_dir}class{$class_file}.php";
-	}
-);
-
-/**
- * Autoload files.
- */
-\array_map(
-	function ( $file ) {
-		$filename = __DIR__ . "/$file.php";
-
-		if ( \is_readable( $filename ) ) {
-			require_once $filename;
-		}
-	},
-	apply_filters( '', [
+	$files = [
 
 		// Composer.
 		'../vendor/autoload',
 
 		// Functions.
 		'functions/helpers',
+		'functions/autoload',
 		'functions/setup',
 		'functions/enqueue',
 		'functions/markup',
@@ -77,5 +59,13 @@ namespace SeoThemes\Core;
 		// Plugins.
 		'plugins/gravity-forms',
 		'plugins/woocommerce',
-	] )
-);
+	];
+
+	foreach ( $files as $file ) {
+		$filename = __DIR__ . "/$file.php";
+
+		if ( \is_readable( $filename ) ) {
+			require_once $filename;
+		}
+	}
+}
