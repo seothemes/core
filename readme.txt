@@ -27,6 +27,8 @@ Upon activation, this plugin works out which theme is currently active and provi
 - Useful helper functions
 - Loading Google Fonts
 
+This plugin was created as a way to keep your child themes up to date with the latest features, security fixes and bug fixes. By shifting the majority of code out of the child theme and into a plugin, we are able to provide automatic updates without overwriting customizations made to your child theme.
+
 == Installation ==
 1. Go to Plugins > Add New.
 2. Type in the name of the WordPress Plugin or descriptive keyword, author, or tag in Search Plugins box or click a tag link below the screen.

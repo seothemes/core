@@ -4,7 +4,7 @@ Contains the required core functionality that is shared by all Genesis child the
 
 ## Purpose
 
-This plugin was created as a way to keep your child themes up to date with the latest features as well as security and bug fixes. By shifting the majority of code out of the child theme and into a plugin, we are able to provide automatic updates for that code without breaking a users
+This plugin was created as a way to keep your child themes up to date with the latest features, security fixes and bug fixes. By shifting the majority of code out of the child theme and into a plugin, we are able to provide automatic updates without overwriting customizations made to your child theme.
 
 ## Installation
 
