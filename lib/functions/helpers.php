@@ -39,10 +39,65 @@ function get_plugin_url() {
 	static $url = null;
 
 	if ( \is_null( $url ) ) {
-		$url = \trailingslashit( \plugins_url( get_plugin_dir() ) );
+		$url = \trailingslashit( \plugins_url( basename( get_plugin_dir() ) ) );
 	}
 
 	return $url;
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $header
+ *
+ * @return array|string|null
+ */
+function get_plugin_data( $header = '' ) {
+	static $data = null;
+
+	if ( is_null( $data ) ) {
+		$data = get_file_data( get_plugin_dir() . 'seothemes-core.php', [
+			'name'        => 'Plugin Name',
+			'version'     => 'Version',
+			'plugin-uri'  => 'Plugin URI',
+			'text-domain' => 'Text Domain',
+			'description' => 'Description',
+			'author'      => 'Author',
+			'author-uri'  => 'Author URI',
+			'domain-path' => 'Domain Path',
+			'network'     => 'Network',
+		], 'plugin' );
+	}
+
+	if ( array_key_exists( $header, $data ) ) {
+		return $data[ $header ];
+	}
+
+	return $data;
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array|null|string
+ */
+function get_plugin_name() {
+	return get_plugin_data( 'name' );
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array|null|string
+ */
+function get_plugin_handle() {
+	return get_plugin_data( 'text-domain' );
 }
 
 /**
@@ -58,6 +113,63 @@ function get_config( $config ) {
 	$data = require get_plugin_dir() . "config/$config.php";
 
 	return apply_filters( 'child_theme_config', $data );
+}
+
+/**
+ * Returns the active theme key.
+ *
+ * Checks multiple places to find a match.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function get_active_theme() {
+	static $theme = null;
+
+	if ( is_null( $theme ) ) {
+
+		$theme_support = \get_theme_support( 'seothemes-core' )[0];
+
+		if ( $theme_support ) {
+			$theme = $theme_support;
+		}
+
+		if ( ! $theme_support ) {
+
+			$text_domain = \wp_get_theme()->get( 'TextDomain' );
+
+			if ( $text_domain ) {
+				$theme = $text_domain;
+			}
+		}
+	}
+
+	return $theme;
+}
+
+/**
+ * Returns an array of all SEO Themes child themes.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function get_child_themes() {
+	return [
+		'startup-pro',
+		'display-pro',
+		'newspaper-pro',
+		'corporate-pro',
+		'studio-pro',
+		'business-pro',
+		'store-pro',
+		'limitless-pro',
+		'restaurant-pro',
+		'architect-pro',
+		'fitness-pro',
+		'legal-pro',
+	];
 }
 
 /**

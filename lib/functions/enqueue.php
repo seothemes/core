@@ -11,9 +11,18 @@
 
 namespace SeoThemes\Core\Functions;
 
-// Genesis style trump.
-remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+add_action('after_setup_theme', __NAMESPACE__ . '\genesis_style_trump');
+/**
+ * Genesis style trump.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function genesis_style_trump() {
+	remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+	add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
+}
 
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_assets' );

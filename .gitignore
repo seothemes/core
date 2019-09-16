@@ -1,2 +1,4 @@
 *.lock
+*.zip
 vendor
+node_modules

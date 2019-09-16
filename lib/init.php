@@ -16,12 +16,16 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\init', 100 );
  * Initialize plugin files.
  *
  * Loads between Genesis and child theme functions.php.
- * 
+ *
  * @since 1.0.0
  *
  * @return void
  */
 function init() {
+
+	if ( ! function_exists( 'genesis' ) ) {
+		return;
+	}
 
 	$files = [
 
@@ -59,6 +63,9 @@ function init() {
 		// Plugins.
 		'plugins/gravity-forms',
 		'plugins/woocommerce',
+
+		// Admin.
+		'admin/notices',
 	];
 
 	foreach ( $files as $file ) {
@@ -68,4 +75,9 @@ function init() {
 			require_once $filename;
 		}
 	}
+
+	// Load specific functionality for active theme.
+	$active_theme = \SeoThemes\Core\Functions\get_active_theme();
+
+	require_once __DIR__ . "/themes/$active_theme.php";
 }

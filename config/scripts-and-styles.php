@@ -13,38 +13,41 @@ namespace SeoThemes\Core;
 
 use function SeoThemes\Core\Functions\get_config;
 use function SeoThemes\Core\Functions\get_plugin_url;
+use function SeoThemes\Core\Functions\get_active_theme;
+use function SeoThemes\Core\Functions\get_plugin_handle;
 
 $asset_url    = \trailingslashit( get_plugin_url() . 'assets' );
 $google_fonts = \implode( '|', get_config( 'google-fonts' ) );
+$active_theme = get_active_theme();
 
 return [
 	'add'    => [
 		[
-			'handle' => \genesis_get_theme_handle() . '-editor',
+			'handle' => get_plugin_handle() . '-editor',
 			'src'    => $asset_url . 'js/editor.js',
 			'deps'   => [ 'wp-blocks' ],
 			'editor' => true,
 		],
 		[
-			'handle'    => \genesis_get_theme_handle() . '-main',
-			'src'       => $asset_url . 'js/min/main.min.js',
+			'handle'    => get_plugin_handle(),
+			'src'       => $asset_url . 'js/min/core.min.js',
 			'condition' => function () {
 				return ! \genesis_is_amp();
 			},
 		],
 		[
-			'handle' => \genesis_get_theme_handle() . '-main',
-			'src'    => $asset_url . 'css/main.css',
+			'handle' => get_plugin_handle(),
+			'src'    => "{$asset_url}css/$active_theme.css",
 		],
 		[
-			'handle'    => \genesis_get_theme_handle() . '-woocommerce',
+			'handle'    => get_plugin_handle() . '-woocommerce',
 			'src'       => $asset_url . 'css/woocommerce.css',
 			'condition' => function () {
 				return \class_exists( 'WooCommerce' );
 			},
 		],
 		[
-			'handle' => \genesis_get_theme_handle() . '-google-fonts',
+			'handle' => get_plugin_handle() . '-google-fonts',
 			'src'    => "//fonts.googleapis.com/css?family=$google_fonts&display=swap",
 			'editor' => 'both',
 		],
