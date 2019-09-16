@@ -13,7 +13,19 @@ Core functionality plugin for SEO Themes Genesis child themes.
 
 == Description ==
 
-Contains the required core functionality that is shared by all Genesis child themes created by SEO Themes.
+SEO Themes Core will be shown in the list of recommended plugins when you activate any one of our themes and run through the Genesis [One Click Theme Setup](https://studiopress.github.io/genesis/theme-setup/) process.
+
+Upon activation, this plugin works out which theme is currently active and provides the specific functionality for that theme. Some of that functionality includes:
+
+- Customizer settings
+- Handy shortcodes
+- Hero section
+- Widget areas
+- WooCommerce compatibility
+- Shared CSS and JS
+- Repositioning of Genesis hooks
+- Useful helper functions
+- Loading Google Fonts
 
 == Installation ==
 1. Go to Plugins > Add New.
