@@ -6,6 +6,12 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 html {
 	overflow-x: hidden;
 	box-sizing: border-box;
@@ -18,14 +24,4 @@ html {
 	&.admin-bar-showing {
 		height: calc(100% - 32px);
 	}
-}
-
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
-
-p:empty {
-	display: none;
 }

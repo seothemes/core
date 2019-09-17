@@ -100,9 +100,9 @@ function header() {
 register_default_headers(
 	[
 		'child' => [
-			'url'           => '%2$s/assets/img/hero.jpg',
-			'thumbnail_url' => '%2$s/assets/img/hero.jpg',
-			'description'   => __( 'Hero Image', 'genesis-starter-theme' ),
+			'url'           => get_plugin_url() . 'assets/img/hero.jpg',
+			'thumbnail_url' => get_plugin_url() . 'assets/img/hero.jpg',
+			'description'   => __( 'Hero Image', 'seothemes-core' ),
 		],
 	]
 );

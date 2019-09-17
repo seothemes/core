@@ -6,12 +6,6 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-// Abstracts
-@import "../../../../node_modules/bourbon/core/bourbon";
-@import "../../settings/_index";
-@import "../../tools/_index";
-
-// WooCommerce
 @import "globals";
 @import "shop-page";
 @import "product";

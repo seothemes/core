@@ -11,7 +11,29 @@
 
 namespace SeoThemes\Core;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\init', 100 );
+add_action( 'setup_theme', __NAMESPACE__ . '\genesis_init', 100 );
+/**
+ * Starts the engine.
+ *
+ * Enables the use of `genesis_*` functions in the child theme functions.php file,
+ * without the need for require_once get_template_directory() . '/lib/init.php'
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function genesis_init() {
+	defined( 'TEMPLATEPATH' ) || define( 'TEMPLATEPATH', \get_template_directory() );
+	defined( 'STYLESHEETPATH' ) || define( 'STYLESHEETPATH', \get_stylesheet_directory() );
+
+	$init = TEMPLATEPATH . '/lib/init.php';
+
+	if ( is_readable( $init ) ) {
+		require_once $init;
+	}
+}
+
+add_action( 'genesis_setup', __NAMESPACE__ . '\child_theme_init', 100 );
 /**
  * Initialize plugin files.
  *
@@ -21,7 +43,7 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\init', 100 );
  *
  * @return void
  */
-function init() {
+function child_theme_init() {
 
 	if ( ! function_exists( 'genesis' ) ) {
 		return;

@@ -21,6 +21,9 @@ namespace SeoThemes\Core\Functions;
  */
 function setup() {
 
+	// Get active theme.
+	$active_theme = get_active_theme();
+
 	// Get setup configs.
 	$responsive_menu   = get_config( 'responsive-menu' );
 	$theme_support     = get_config( 'theme-support' );
@@ -33,7 +36,7 @@ function setup() {
 	\load_child_theme_textdomain( \genesis_get_theme_handle(), get_plugin_dir() . '/assets/lang' );
 
 	// Add editor styles.
-	\add_editor_style( '/assets/css/editor.css' );
+	\add_editor_style( "/assets/css/{$active_theme}/{$active_theme}-editor.css" );
 
 	// Add responsive menus.
 	\genesis_register_responsive_menus( $responsive_menu );

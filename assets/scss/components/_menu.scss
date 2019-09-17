@@ -9,6 +9,7 @@
 .menu {
 	margin: 0;
 	list-style-type: none;
+	font-family: $menu__font-family;
 
 	@include mq(m) {
 		display: flex;
@@ -16,7 +17,7 @@
 		justify-content: flex-end;
 		align-items: center;
 		border: 0;
-		font-size: $base--font-size / $major-second;
+		font-size: $menu__font-size;
 	}
 
 	// Menu item.
@@ -54,7 +55,7 @@
 
 	// Link
 	a {
-		color: $color--text;
+		color: $menu-item-link__color;
 		text-decoration: none;
 	}
 

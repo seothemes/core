@@ -12,16 +12,18 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	padding: $spacing--l 0;
+	padding: $hero-section__padding--mobile;
 	border-bottom: $base--border;
 	background-position: center;
 	background-size: cover;
 	text-align: center;
+	color: $hero-section__color;
 
 	@include overlay;
 
 	@include mq(m) {
-		padding: $spacing--xl 0;
+
+		padding: $hero-section__padding--desktop;
 	}
 
 	.wrap {
@@ -32,6 +34,8 @@
 	h1 {
 		width: 100%;
 		margin-bottom: 0;
+		color: $hero-heading__color;
+		font-size: $hero-heading__font-size;
 	}
 
 	p {

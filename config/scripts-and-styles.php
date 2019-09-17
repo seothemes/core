@@ -37,14 +37,7 @@ return [
 		],
 		[
 			'handle' => get_plugin_handle(),
-			'src'    => "{$asset_url}css/$active_theme.css",
-		],
-		[
-			'handle'    => get_plugin_handle() . '-woocommerce',
-			'src'       => $asset_url . 'css/woocommerce.css',
-			'condition' => function () {
-				return \class_exists( 'WooCommerce' );
-			},
+			'src'    => "{$asset_url}css/{$active_theme}/{$active_theme}-main.css",
 		],
 		[
 			'handle' => get_plugin_handle() . '-google-fonts',

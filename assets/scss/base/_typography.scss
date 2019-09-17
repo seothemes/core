@@ -36,6 +36,10 @@ a {
 p {
 	margin: 0 0 $spacing--m;
 	padding: 0;
+
+	&:empty {
+		display: none;
+	}
 }
 
 hr {

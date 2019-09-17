@@ -32,7 +32,7 @@
 		padding: $spacing--xxl 0 $spacing--xxl - $gap;
 
 		@include mq(m) {
-			padding: $spacing--xxxl 0 $spacing--xxxl - $gap;
+			padding: $front-page-1__spacing--desktop;
 		}
 	}
 

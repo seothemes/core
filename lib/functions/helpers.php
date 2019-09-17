@@ -112,7 +112,7 @@ function get_plugin_handle() {
 function get_config( $config ) {
 	$data = require get_plugin_dir() . "config/$config.php";
 
-	return apply_filters( 'child_theme_config', $data );
+	return apply_filters( "child_theme_{$config}_config", $data );
 }
 
 /**
@@ -203,4 +203,26 @@ function is_type_archive() {
  */
 function has_hero_section() {
 	return \in_array( 'has-hero-section', \get_body_class(), true );
+}
+
+/**
+ * Checks if given sidebar contains a certain widget.
+ *
+ * @since  1.0.0
+ *
+ * @uses   $sidebars_widgets
+ *
+ * @param  string $sidebar Name of sidebar, e.g `primary`.
+ * @param  string $widget  Widget ID to check, e.g `custom_html`.
+ *
+ * @return bool
+ */
+function sidebar_has_widget( $sidebar, $widget ) {
+	global $sidebars_widgets;
+
+	if ( isset( $sidebars_widgets[ $sidebar ][0] ) && strpos( $sidebars_widgets[ $sidebar ][0], $widget ) !== false && is_active_sidebar( $sidebar ) ) {
+		return true;
+	}
+
+	return false;
 }

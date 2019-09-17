@@ -20,7 +20,7 @@
 // Site title.
 .site-title {
 	margin: 0;
-	font-size: 1em;
+	font-size: $site-title__font-size;
 	font-weight: $font-weight--semibold;
 
 	.wp-custom-logo & {
@@ -29,10 +29,10 @@
 	}
 
 	a {
-		color: $color--text;
+		color: $site-title__color;
 
 		@include hover-focus {
-			color: $color--primary;
+			color: $site-title__color--hover;
 		}
 	}
 }
@@ -41,6 +41,7 @@
 .site-description {
 	margin: 0;
 	font-size: small;
+	color: $site-description__color;
 
 	.wp-custom-logo & {
 

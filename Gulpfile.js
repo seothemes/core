@@ -34,31 +34,17 @@ toolkit.extendConfig(
         zindex: false
       },
       scss: {
-        'business-pro': {
-          src: './assets/scss/themes/business-pro.scss',
-          dest: './assets/css/',
+        'business-pro-main': {
+          src: './assets/scss/themes/business-pro/main.scss',
+          dest: './assets/css/business-pro/',
           outputStyle: 'compressed',
         },
-        'corporate-pro': {
-          src: './assets/scss/themes/corporate-pro.scss',
-          dest: './assets/css/',
-          outputStyle: 'compressed',
-        },
-        'studio-pro': {
-          src: './assets/scss/themes/studio-pro.scss',
-          dest: './assets/css/',
-          outputStyle: 'compressed',
-        },
-        'editor': {
-          src: './assets/scss/editor.scss',
-          dest: './assets/css/',
+        'business-pro-editor': {
+          src: './assets/scss/themes/business-pro/editor.scss',
+          dest: './assets/css/business-pro/',
           outputStyle: 'compressed'
         },
-        'woocommerce': {
-          src: './assets/scss/plugins/woocommerce/__index.scss',
-          dest: './assets/css/',
-          outputStyle: 'compressed'
-        }
+
       }
     },
     dest: {

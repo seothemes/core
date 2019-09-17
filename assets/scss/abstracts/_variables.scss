@@ -1,0 +1,326 @@
+////
+/// Custom variables.
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+////
+/// Breakpoints
+////
+
+$mq-base: 896px !default;
+$mq-increment: 128px !default;
+
+$mq-xxxxs: $mq-base - ($mq-increment * 5) !default;
+$mq-xxxs: $mq-base - ($mq-increment * 4) !default;
+$mq-xxs: $mq-base - ($mq-increment * 3) !default;
+$mq-xs: $mq-base - ($mq-increment * 2) !default;
+$mq-s: $mq-base - $mq-increment !default;
+$mq-m: $mq-base !default;
+$mq-l: $mq-base + $mq-increment !default;
+$mq-xl: $mq-base + ($mq-increment * 2) !default;
+$mq-xxl: $mq-base + ($mq-increment * 3) !default;
+$mq-xxxl: $mq-base + ($mq-increment * 4) !default;
+$mq-xxxxl: $mq-base + ($mq-increment * 5) !default;
+
+$mq-media-type: all;
+
+$mq-breakpoints: (
+	xxxxs: $mq-xxxxs,
+	xxxs: $mq-xxxs,
+	xxs: $mq-xxs,
+	xs: $mq-xs,
+	s: $mq-s,
+	m: $mq-m,
+	l: $mq-l,
+	xl: $mq-xl,
+	xxl: $mq-xxl,
+	xxxl: $mq-xxxl,
+	xxxxl: $mq-xxxxl,
+) !default;
+
+////
+/// Colors
+////
+
+// Palette
+$color--blue: #007bff !default;
+$color--indigo: #6610f2 !default;
+$color--purple: #6f42c1 !default;
+$color--pink: #e83e8c !default;
+$color--red: #dc3545 !default;
+$color--orange: #fd7e14 !default;
+$color--yellow: #ffc107 !default;
+$color--green: #28a745 !default;
+$color--teal: #20c997 !default;
+$color--cyan: #17a2b8 !default;
+
+// Gray scale
+$color--white: #fff !default;
+$color--gray-100: #f8f9fa !default;
+$color--gray-200: #e9ecef !default;
+$color--gray-300: #dee2e6 !default;
+$color--gray-400: #ced4da !default;
+$color--gray-500: #adb5bd !default;
+$color--gray-600: #6c757d !default;
+$color--gray-700: #495057 !default;
+$color--gray-800: #343a40 !default;
+$color--gray-900: #212529 !default;
+$color--black: #000 !default;
+
+// Theme
+$color--primary: $color--blue !default;
+$color--secondary: $color--gray-600 !default;
+$color--success: $color--green !default;
+$color--info: $color--blue !default;
+$color--warning: $color--yellow !default;
+$color--error: $color--red !default;
+$color--light: $color--gray-100 !default;
+$color--medium: $color--gray-500 !default;
+$color--dark: $color--gray-800 !default;
+$color--heading: $color--gray-800 !default;
+$color--text: $color--gray-700 !default;
+$color--border: $color--gray-200 !default;
+$color--background: $color--gray-100 !default;
+$color--muted: $color--gray-400 !default;
+$color--overlay: rgba($color--gray-100, 0.9) !default;
+
+// Social
+$color--dribbble: #ea4c89 !default;
+$color--email: #049fb3 !default;
+$color--facebook: #3b5998 !default;
+$color--flickr: #ff0084 !default;
+$color--github: #333 !default;
+$color--gplus: #dd4b39 !default;
+$color--linkedin: #007bb6 !default;
+$color--pinterest: #bd081c !default;
+$color--rss: #f60 !default;
+$color--stumbleupon: #eb4823 !default;
+$color--tumblr: #32506d !default;
+$color--twitter: #1da1f2 !default;
+$color--vimeo: #aad450 !default;
+$color--youtube: #f00 !default;
+$color--snapchat: #fffc00 !default;
+$color--instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%) !default;
+
+$colors: (
+	"primary": $color--primary,
+	"secondary": $color--secondary,
+	"success": $color--success,
+	"info": $color--info,
+	"warning": $color--warning,
+	"error": $color--error,
+	"light": $color--light,
+	"medium": $color--medium,
+	"dark": $color--dark,
+	"heading": $color--heading,
+	"text": $color--text,
+	"border": $color--border,
+	"background": $color--background,
+	"muted": $color--muted,
+	"overlay": $color--overlay,
+	"blue": $color--blue,
+	"indigo": $color--indigo,
+	"purple": $color--purple,
+	"pink": $color--pink,
+	"red": $color--red,
+	"orange": $color--orange,
+	"yellow": $color--yellow,
+	"green": $color--green,
+	"teal": $color--teal,
+	"cyan": $color--cyan,
+	"white": $color--white,
+	"gray-100": $color--gray-100,
+	"gray-200": $color--gray-200,
+	"gray-300": $color--gray-300,
+	"gray-400": $color--gray-400,
+	"gray-500": $color--gray-500,
+	"gray-600": $color--gray-600,
+	"gray-700": $color--gray-700,
+	"gray-800": $color--gray-800,
+	"gray-900": $color--gray-900,
+	"black": $color--black,
+) !default;
+
+////
+/// Typography
+////
+
+// Font sizes
+$base--font-size: 1.6rem !default;
+
+$font-size--h1: 2.3em !default;
+$font-size--h2: 1.8em !default;
+$font-size--h3: 1.5em !default;
+$font-size--h4: 1.3em !default;
+$font-size--h5: 1.2em !default;
+$font-size--h6: 1.1em !default;
+
+$font-sizes: (
+	h1: $font-size--h1,
+	h2: $font-size--h2,
+	h3: $font-size--h3,
+	h4: $font-size--h4,
+	h5: $font-size--h5,
+	h6: $font-size--h6,
+) !default;
+
+// Font families
+$base--font-family: $font-stack-system !default;
+
+$font-family--heading: $base--font-family !default;
+$font-family--code: $font-stack-consolas !default;
+
+// Font weight
+$font-weight--hairline: 100 !default;
+$font-weight--extralight: 200 !default;
+$font-weight--light: 300 !default;
+$font-weight--regular: 400 !default;
+$font-weight--medium: 500 !default;
+$font-weight--semibold: 600 !default;
+$font-weight--bold: 700 !default;
+$font-weight--extrabold: 800 !default;
+$font-weight--black: 900 !default;
+
+$base--font-weight: $font-weight--regular !default;
+$font-weight--heading: $font-weight--semibold !default;
+
+// Line height
+$base--line-height: modular-scale(0, $golden) !default;
+
+$line-height--heading: modular-scale(-1, $golden) !default;
+
+////
+/// Spacing
+////
+
+$spacing--xxxs: $base--font-size / 8 !default;
+$spacing--xxs: $base--font-size / 5 !default;
+$spacing--xs: $base--font-size / 3 !default;
+$spacing--s: $base--font-size / 2 !default;
+$spacing--m: $base--font-size !default;
+$spacing--l: $base--font-size * 2 !default;
+$spacing--xl: $base--font-size * 3 !default;
+$spacing--xxl: $base--font-size * 5 !default;
+$spacing--xxxl: $base--font-size * 8 !default;
+
+$spacing: (
+	xxxs: $spacing--xxxs,
+	xxs: $spacing--xxs,
+	xs: $spacing--xs,
+	s: $spacing--s,
+	m: $spacing--m,
+	l: $spacing--l,
+	xl: $spacing--xl,
+	xxl: $spacing--xxl,
+	xxxl: $spacing--xxxl,
+) !default;
+
+////
+/// Grid
+////
+
+$gutter: $spacing--l !default;
+$gap: $spacing--m * $perfect-fifth !default;
+
+$one-half: calc((100% - (#{$gutter} * 1)) / 2) !default;
+$one-third: calc((100% - (#{$gutter} * 2)) / 3) !default;
+$one-fourth: calc((100% - (#{$gutter} * 3)) / 4) !default;
+$one-fifth: calc((100% - (#{$gutter} * 4)) / 5) !default;
+$one-sixth: calc((100% - (#{$gutter} * 5)) / 6) !default;
+$two-thirds: calc(#{$one-third} * 2 + #{$gutter}) !default;
+$two-fourths: calc(#{$one-fourth} * 2 + #{$gutter}) !default;
+$two-fifths: calc(#{$one-fifth} * 2 + #{$gutter}) !default;
+$two-sixths: calc(#{$one-sixth} * 2 + #{$gutter}) !default;
+$three-fourths: calc(#{$one-fourth} * 3 + (#{$gutter} * 2)) !default;
+$three-fifths: calc(#{$one-fifth} * 3 + (#{$gutter} * 2)) !default;
+$three-sixths: calc(#{$one-sixth} * 3 + (#{$gutter} * 2)) !default;
+$four-fifths: calc(#{$one-fifth} * 4 + (#{$gutter} * 3)) !default;
+$four-sixths: calc(#{$one-sixth} * 4 + (#{$gutter} * 3)) !default;
+$five-sixths: calc(#{$one-sixth} * 5 + (#{$gutter} * 4)) !default;
+
+////
+/// Layout
+////
+
+$layout--width: $mq-xl !default;
+$layout--width--sidebar: 30rem !default;
+$layout--width--content: calc(#{$layout--width} - (#{$layout--width--sidebar} + #{$spacing--xl})) !default;
+$layout--max-width--content: calc(100% - (#{$layout--width--sidebar} + #{$spacing--xl})) !default;
+
+////
+/// Globals
+///
+
+// Borders
+$base--border--radius: 4px !default;
+$base--border--width: 1px !default;
+$base--border--style: solid !default;
+$base--border--color: $color--border !default;
+$base--border: $base--border--width $base--border--style $base--border--color !default;
+
+// Shadows
+$base--box-shadow--x: 0 !default;
+$base--box-shadow--y: 0 !default;
+$base--box-shadow--blur: $base--font-size !default;
+$base--box-shadow--spread: 0 !default;
+$base--box-shadow--color: $color--black !default;
+$base--box-shadow--opacity: 0.1 !default;
+$base--box-shadow: $base--box-shadow--x $base--box-shadow--y $base--box-shadow--blur $base--box-shadow--spread rgba($base--box-shadow--color, $base--box-shadow--opacity) !default;
+
+// Transition
+$base--transition-property: all !default;
+$base--transition-duration: 0.2s !default;
+$base--transition-timing-function: ease !default;
+$base--transition-delay: 0 !default;
+$base--transition: $base--transition-property $base--transition-duration $base--transition-timing-function $base--transition-delay !default;
+
+////
+/// Base
+////
+
+$all-buttons: append($all-buttons, ".button");
+$all-buttons: append($all-buttons, ".button.menu-item a");
+
+$button__padding: $spacing--m * $minor-third $gutter !default;
+$button__border: 0 !default;
+$button__border-radius: $base--border--radius !default;
+$button__color: $color--white !default;
+$button__background: $color--primary !default;
+$button__font-family: $base--font-family !default;
+$button__font-size: $base--font-size / $major-second !default;
+$button__font-weight: $font-weight--heading !default;
+
+$button__border--hover: 0 !default;
+$button__color--hover: $color--white !default;
+$button__background--hover: $color--primary !default;
+
+$button__outline--border: 1px solid $color--primary !default;
+$button__outline--color: $color--primary !default;
+$button__outline--background: transparent !default;
+
+$button__outline--color--hover: $color--white !default;
+$button__outline--background--hover: $color--primary !default;
+
+////
+/// Components
+////
+
+$site-title__font-size: 1em !default;
+$site-title__color: $color--text !default;
+$site-title__color--hover: $color--primary !default;
+$site-description__color: $color--text !default;
+
+$menu__font-family: $base--font-family !default;
+$menu__font-size: $base--font-size / $major-second !default;
+$menu-item-link__color: $color--text !default;
+
+$hero-section__padding--mobile: $spacing--l 0 !default;
+$hero-section__color: $color--text !default;
+$hero-section__padding--desktop: $spacing--xl 0 !default;
+$hero-heading__font-size: $font-size--h1 !default;
+$hero-heading__color: $color--text !default;
+
+$front-page-1__spacing--desktop: $spacing--xxxl 0 $spacing--xxxl - $gap !default;

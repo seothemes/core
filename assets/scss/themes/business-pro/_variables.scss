@@ -1,0 +1,27 @@
+////
+/// Business Pro variables.
+///
+/// @group  Themes
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+// Colors.
+$color--primary: #fb2056;
+$color--dark: #232c39;
+$color--overlay: rgba($color--dark, 0.9);
+$site-title__color: #fff;
+$site-description__color: #fff;
+$menu-item-link__color: #fff;
+$hero-section__color: #fff;
+$hero-heading__color: #fff;
+
+// Fonts.
+$base--font-family: hind, $font-stack-system;
+$font-family--heading: montserrat, $base--font-family;
+$button__font-family: $font-family--heading;
+$menu__font-family: $font-family--heading;
+$hero-heading__font-size: 5.4rem;
+
+// Spacing.
+$front-page-1__spacing--desktop: 9em 0 8em;

@@ -1,10 +1,10 @@
 ////
-/// Tool imports.
+/// Abstracts imports.
 ///
 /// These are used throughout the code but don't output CSS on their own. Things
 /// like functions, mixins, and extensions go here.
 ///
-/// @group  Tools
+/// @group  Abstracts
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
@@ -12,4 +12,4 @@
 @import "variables";
 @import "functions";
 @import "mixins";
-@import "extends";
+@import "placeholders";

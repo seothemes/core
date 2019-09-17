@@ -1,14 +1,22 @@
 ////
-/// Generic imports.
+/// Base imports.
 ///
 /// This is the first point that real CSS is output. Resets, normalization,
 /// fonts, etc. are best handled here. These are the base styles that other
 /// styles will build upon.
 ///
-/// @group  Generic
+/// @group  Base
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
-@import "normalize";
-@import "box-sizing";
+@import "../../../node_modules/node-normalize-scss/normalize";
+@import "html";
+@import "typography";
+@import "heading";
+@import "list";
+@import "button";
+@import "form";
+@import "table";
+@import "media";
+
