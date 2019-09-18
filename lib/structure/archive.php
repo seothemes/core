@@ -14,18 +14,12 @@ namespace SeoThemes\Core\Structure;
 use function SeoThemes\Core\Functions\get_config;
 use function SeoThemes\Core\Functions\is_type_archive;
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\reposition_entry_image' );
-/**
- * Reposition entry image.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function reposition_entry_image() {
-	\remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-	\add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
-}
+// Reposition entry image.
+\remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+\add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+
+// Enable shortcodes in archive description.
+add_filter( 'genesis_cpt_archive_intro_text_output', 'do_shortcode' );
 
 \add_filter( 'post_class', __NAMESPACE__ . '\archive_post_class' );
 /**

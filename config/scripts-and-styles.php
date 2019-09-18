@@ -31,6 +31,7 @@ return [
 		[
 			'handle'    => get_plugin_handle(),
 			'src'       => $asset_url . 'js/min/core.min.js',
+			'deps'      => [ 'jquery' ],
 			'condition' => function () {
 				return ! \genesis_is_amp();
 			},
@@ -47,5 +48,6 @@ return [
 	],
 	'remove' => [
 		'superfish',
+		'simple-social-icons-font',
 	],
 ];

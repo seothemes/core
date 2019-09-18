@@ -11,18 +11,9 @@
 
 namespace SeoThemes\Core\Functions;
 
-add_action('after_setup_theme', __NAMESPACE__ . '\genesis_style_trump');
-/**
- * Genesis style trump.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function genesis_style_trump() {
-	remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-	add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
-}
+// Genesis style trump.
+\remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+\add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
 
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_assets' );
@@ -64,7 +55,7 @@ function enqueue_assets() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_scripts_and_styles', 15 );
 /**
  * Deregister scripts.
  *
@@ -72,10 +63,11 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_scripts' );
  *
  * @return void
  */
-function deregister_scripts() {
+function deregister_scripts_and_styles() {
 	$assets = get_config( 'scripts-and-styles' )['remove'];
 
 	foreach ( $assets as $asset ) {
 		\wp_deregister_script( $asset );
+		\wp_deregister_style( $asset );
 	}
 }

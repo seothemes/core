@@ -11,7 +11,7 @@
 
 namespace SeoThemes\Core;
 
-add_action( 'setup_theme', __NAMESPACE__ . '\genesis_init', 100 );
+add_action( 'setup_theme', __NAMESPACE__ . '\load_genesis', 100 );
 /**
  * Starts the engine.
  *
@@ -22,7 +22,7 @@ add_action( 'setup_theme', __NAMESPACE__ . '\genesis_init', 100 );
  *
  * @return void
  */
-function genesis_init() {
+function load_genesis() {
 	defined( 'TEMPLATEPATH' ) || define( 'TEMPLATEPATH', \get_template_directory() );
 	defined( 'STYLESHEETPATH' ) || define( 'STYLESHEETPATH', \get_stylesheet_directory() );
 
@@ -44,10 +44,6 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\child_theme_init', 100 );
  * @return void
  */
 function child_theme_init() {
-
-	if ( ! function_exists( 'genesis' ) ) {
-		return;
-	}
 
 	$files = [
 
@@ -81,6 +77,7 @@ function child_theme_init() {
 		'shortcodes/hook',
 		'shortcodes/search-form',
 		'shortcodes/widget-area',
+		'shortcodes/terms-filter',
 
 		// Plugins.
 		'plugins/gravity-forms',
@@ -88,6 +85,7 @@ function child_theme_init() {
 
 		// Admin.
 		'admin/notices',
+		'admin/widget-classes',
 	];
 
 	foreach ( $files as $file ) {
@@ -99,7 +97,23 @@ function child_theme_init() {
 	}
 
 	// Load specific functionality for active theme.
-	$active_theme = \SeoThemes\Core\Functions\get_active_theme();
+	$active_theme = __DIR__ . '/themes/' . Functions\get_active_theme() . '.php';
 
-	require_once __DIR__ . "/themes/$active_theme.php";
+	if ( is_readable( $active_theme ) ) {
+		require_once $active_theme;
+	}
+
+	/**
+	 * Fires during child theme intialization.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'child_theme_init' );
+
+	/**
+	 * Fires after child theme initialization.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'child_theme_setup' );
 }

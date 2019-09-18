@@ -1,0 +1,21 @@
+////
+/// Terms filter component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.terms-filter {
+
+}
+
+.entry {
+	@include transition;
+
+	&.hide {
+		position: absolute;
+		opacity: 0;
+		transform: scale(0.1);
+	}
+}

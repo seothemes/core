@@ -11,6 +11,11 @@
 
 namespace SeoThemes\Core\Structure;
 
+// Reposition footer widgets.
+\remove_action( 'genesis_footer', 'genesis_do_footer' );
+\remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+\add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
+
 \add_action( 'genesis_footer', __NAMESPACE__ . '\before_footer_widget', 5 );
 /**
  * Displays before footer widget area.
@@ -27,20 +32,6 @@ function before_footer_widget() {
 			'after'  => '</div></div>',
 		]
 	);
-}
-
-\add_action( 'after_setup_theme', __NAMESPACE__ . '\reposition_footer_widgets' );
-/**
- * Repositions the footer widgets and remove default footer credits.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function reposition_footer_widgets() {
-	\remove_action( 'genesis_footer', 'genesis_do_footer' );
-	\remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-	\add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
 }
 
 \add_action( 'genesis_footer', __NAMESPACE__ . '\do_footer_credits' );

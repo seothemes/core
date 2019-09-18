@@ -11,7 +11,7 @@
 
 namespace SeoThemes\Core\Functions;
 
-\add_action( 'after_setup_theme', __NAMESPACE__ . '\setup', 5 );
+\add_action( 'child_theme_setup', __NAMESPACE__ . '\setup' );
 /**
  * Theme setup.
  *

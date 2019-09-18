@@ -6,6 +6,8 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$widget-title__font-size: $font-size--h5 !default;
+
 .widget {
 	margin-bottom: $gutter;
 
@@ -14,6 +16,14 @@
 
 	// Widget title.
 	&-title {
-		font-size: $font-size--h5;
+		font-size: $widget-title__font-size;
+		margin-bottom: $spacing--m;
+	}
+
+	p {
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: SEO Themes Core
+ * Plugin Name: SEO Themes Engine
  * Plugin URI:  https://seothemes.com/
  * Description: Core functionality plugin for SEO Themes Genesis child themes.
  * Version:     1.0.0

@@ -6,10 +6,18 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$menu__font-family: $base--font-family !default;
+$menu__font-weight: $base--font-weight !default;
+$menu__font-size: $base--font-size / $major-second !default;
+$menu-item-link__color: $color--text !default;
+$menu-item-link__color--hover: $color--primary !default;
+
+// Menu
 .menu {
 	margin: 0;
 	list-style-type: none;
 	font-family: $menu__font-family;
+	font-weight: $menu__font-weight;
 
 	@include mq(m) {
 		display: flex;
@@ -44,6 +52,25 @@
 			}
 		}
 
+		&-has-children {
+
+			> a > span {
+
+				&:after {
+
+					@include mq(m) {
+						content: '';
+						display: inline-block;
+						margin-left: 0.3em;
+						margin-bottom: 0.1em;
+
+						@include transition;
+						@include triangle("down", $spacing--xs, $spacing--xxs, $menu-item-link__color);
+					}
+				}
+			}
+		}
+
 		&.button {
 			padding: 0;
 
@@ -55,6 +82,8 @@
 
 	// Link
 	a {
+		display: block;
+		width: 100%;
 		color: $menu-item-link__color;
 		text-decoration: none;
 	}
@@ -62,6 +91,13 @@
 	a:hover,
 	a:focus,
 	.current-menu-item > a {
-		color: $color--primary;
+		color: $menu-item-link__color--hover;
+
+		span {
+
+			&:after {
+				border-top-color: $menu-item-link__color--hover;
+			}
+		}
 	}
 }

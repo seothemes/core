@@ -6,6 +6,116 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$all-buttons: append($all-buttons, ".button");
+$all-buttons: append($all-buttons, ".button.menu-item a");
+
+$button__padding: $spacing--m * $minor-third $gutter !default;
+$button__border: 0 !default;
+$button__border-radius: $base--border--radius !default;
+$button__color: $color--white !default;
+$button__background: $color--primary !default;
+$button__font-family: $base--font-family !default;
+$button__font-size: $base--font-size / $major-second !default;
+$button__font-weight: $font-weight--heading !default;
+$button__border--hover: 0 !default;
+$button__color--hover: $color--white !default;
+$button__background--hover: $color--primary !default;
+$button__outline--border: 1px solid $color--primary !default;
+$button__outline--color: $color--primary !default;
+$button__outline--background: transparent !default;
+$button__outline--color--hover: $color--white !default;
+$button__outline--background--hover: $color--primary !default;
+
+////
+/// Button
+////
+
+@mixin button {
+	display: inline-block;
+	width: auto;
+	padding: $button--padding;
+	border: $button--border;
+	border-radius: $button--border-radius;
+	color: $button--color;
+	background-color: $button--background;
+	font-family: $button--font-family;
+	font-size: $button--font-size;
+	font-weight: $button--font-weight;
+	line-height: 1;
+	text-align: center;
+	white-space: normal;
+	text-decoration: none;
+	cursor: pointer;
+
+	@include transition();
+
+	@include hover-focus {
+		outline: none;
+		color: $button--color--hover;
+		background-color: $button--background--hover;
+		border: $button--border--hover;
+		text-decoration: none;
+	}
+
+	&:disabled {
+
+		&,
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+			background-color: $color--muted;
+			cursor: not-allowed;
+		}
+	}
+
+	&.small {
+		padding: 1em 1.5em;
+		font-size: small;
+	}
+
+	&.rounded {
+		border-radius: 10rem;
+	}
+
+	&.outline {
+		border: $button--outline--border;
+		color: $button--outline--color;
+		background: $button--outline--background;
+
+		@include hover-focus {
+			color: $button--outline--color--hover;
+			background: $button--outline--background--hover;
+		}
+	}
+
+	&.fa,
+	&.fab,
+	&.fas {
+		display: inline-flex;
+		font-family: $button--font-family;
+		font-weight: $button--font-weight;
+
+		&:before {
+			display: inline-block;
+			margin-right: $spacing--s;
+			font-family: "Font Awesome 5 Pro", sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			line-height: 1;
+			text-rendering: auto;
+		}
+	}
+
+	&.icon-right {
+
+		&:before {
+			order: 1;
+			margin-right: 0;
+			margin-left: $spacing--s;
+		}
+	}
+}
+
 #{$all-buttons} {
 
 	@include button;

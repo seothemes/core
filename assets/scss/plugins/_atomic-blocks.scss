@@ -6,5 +6,15 @@
 /// @link   https://seothemes.com/themes/genesis-starter-theme
 ////
 
-@import "button";
-@import "image";
+.ab-button {
+
+	@include button;
+}
+
+.ab-container-image-wrap {
+
+	.ab-container-image {
+		margin: 0;
+	}
+}
+

@@ -6,22 +6,63 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-// Colors.
-$color--primary: #fb2056;
-$color--dark: #232c39;
-$color--overlay: rgba($color--dark, 0.9);
-$site-title__color: #fff;
-$site-description__color: #fff;
-$menu-item-link__color: #fff;
-$hero-section__color: #fff;
-$hero-heading__color: #fff;
-
-// Fonts.
 $base--font-family: hind, $font-stack-system;
-$font-family--heading: montserrat, $base--font-family;
+$font-family--heading: montserrat, $font-stack-system;
+
 $button__font-family: $font-family--heading;
+
+$link__text-decoration--hover: none;
+
+$blockquote__padding: $gutter;
+$blockquote__border-left: 0;
+$blockquote__background-color: $color--white;
+
+$sticky-header__background-color: $color--dark;
+$sticky-header__border-bottom: 0;
+
+$site-title__color: $color--white;
+$site-description__color: $color--white;
+
 $menu__font-family: $font-family--heading;
+$menu__font-weight: $font-weight--heading;
+$menu__font-size: 0.75em;
+$menu-item-link__color: $color--border;
+$menu-item-link__color--hover: $color--white;
+
+$sub-menu__border: 0;
+$sub-menu__border-radius: 4px;
+
+$hero-section__color: $color--white;
+$hero-heading__color: $color--white;
 $hero-heading__font-size: 5.4rem;
 
-// Spacing.
-$front-page-1__spacing--desktop: 9em 0 8em;
+$front-page-widget-area__padding--desktop: $spacing--xxl * $minor-third;
+$front-page-1__spacing--desktop: $spacing--xxxl * $minor-third;
+$front-page-3__background-color: $color--background;
+$front-page-widget-area__border-bottom: 0;
+$front-page-4__padding--desktop: $spacing--xxxl * $minor-third;
+$front-page-5__background-color: $color--white;
+$front-page-6__background-color: $color--background;
+
+$entry__border: 0;
+$entry-title__font-size: $font-size--h6;
+
+$before-footer__padding: 10rem;
+$before-footer__border-bottom: 0;
+$before-footer__background-color: transparent;
+$before-footer__color: $color--white;
+$before-footer-title__font-size: $font-size--h3;
+
+$footer-widgets__padding: $spacing--xxl;
+$footer-widgets__background-color: $color--dark;
+$footer-widgets__color: $color--medium;
+$footer-widgets-title__color: $color--white;
+$footer-widgets-title__font-size: $base--font-size;
+$footer-widgets-link__color: $color--medium;
+$footer-widgets-link__color--hover: $color--light;
+
+$footer-credits__padding-bottom: $spacing--xl;
+$footer-credits__background-color: $color--dark;
+$footer-credits__color: $color--medium;
+$footer-credits-link__color: $color--medium;
+$footer-credits-link__color--hover: $color--light;

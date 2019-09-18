@@ -11,17 +11,8 @@
 
 namespace SeoThemes\Core\Functions;
 
-\add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_shortcodes_in_widgets' );
-/**
- * Enable shortcodes in widgets.
- *
- * @since 3.5.0
- *
- * @return void
- */
-function enable_shortcodes_in_widgets() {
-	\add_filter( 'widget_text', 'do_shortcode' );
-}
+// Enable shortcodes in widgets.
+\add_filter( 'widget_text', 'do_shortcode' );
 
 \add_filter( 'genesis_register_widget_area_defaults', __NAMESPACE__ . '\front_page_1_heading', 10, 2 );
 /**
@@ -43,7 +34,6 @@ function front_page_1_heading( $defaults, $args ) {
 	return $defaults;
 }
 
-
 \add_filter( 'genesis_widget_area_defaults', __NAMESPACE__ . '\widget_area_defaults', 10, 3 );
 /**
  * Set default values for widget area output.
@@ -56,12 +46,21 @@ function front_page_1_heading( $defaults, $args ) {
  * @return array
  */
 function widget_area_defaults( $defaults, $id ) {
+
+	// Get custom header markup.
+	ob_start();
+	the_custom_header_markup();
+	$custom_header = ob_get_clean();
+
+	$custom_header = 'front-page-1' === $id ? $custom_header : '';
+
+	// Add hero section markup to Front Page 1.
 	$hero = 'front-page-1' === $id ? ' hero-section" role="banner' : '';
 
 	if ( false !== strpos( $id, 'front-page-' ) ) {
 		$defaults['before'] = \genesis_markup(
 			[
-				'open'    => '<div class="' . $id . $hero . '"><div class="wrap">',
+				'open'    => '<div class="' . $id . $hero . '">' . $custom_header . '<div class="wrap">',
 				'context' => 'widget-area-wrap',
 				'echo'    => false,
 				'params'  => [

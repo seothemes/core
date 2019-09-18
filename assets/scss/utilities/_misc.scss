@@ -76,3 +76,22 @@
 		}
 	}
 }
+
+.overlay {
+
+	@include overlay;
+}
+
+.play-video {
+	background: transparent;
+	border: 2px solid $color--white;
+	border-radius: 10rem;
+	padding: 0;
+
+	@include size($spacing--xxl);
+
+	@include hover-focus {
+		background: $color--white;
+		color: $color--text;
+	}
+}

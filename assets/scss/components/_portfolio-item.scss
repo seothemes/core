@@ -1,0 +1,18 @@
+////
+/// Portfolio item component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+
+.portfolio {
+
+	.featured-content & {
+
+		@include mq(m) {
+			width: $one-third;
+		}
+	}
+}

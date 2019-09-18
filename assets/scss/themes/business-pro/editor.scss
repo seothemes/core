@@ -11,8 +11,9 @@
 ////
 
 @import "../../../../node_modules/bourbon/core/bourbon";
-@import "variables";
 @import "../../abstracts/_index";
+@import "variables";
+@import "../../base/button";
 @import "../../components/block";
 
 .editor-post-title__block .editor-post-title__input,

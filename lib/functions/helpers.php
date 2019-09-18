@@ -110,7 +110,13 @@ function get_plugin_handle() {
  * @return array
  */
 function get_config( $config ) {
-	$data = require get_plugin_dir() . "config/$config.php";
+	$data  = require get_plugin_dir() . "config/$config.php";
+	$child = \get_stylesheet_directory() . "/config/$config.php";;
+
+	if ( is_readable( $child ) ) {
+		$child_config = require $child;
+		$data         = array_merge( $data, $child_config );
+	}
 
 	return apply_filters( "child_theme_{$config}_config", $data );
 }
@@ -170,6 +176,28 @@ function get_child_themes() {
 		'fitness-pro',
 		'legal-pro',
 	];
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param null $color
+ *
+ * @return null
+ */
+function get_default_color( $color = null ) {
+	static $colors = null;
+
+	if ( is_null( $colors ) ) {
+		$theme  = get_active_theme();
+		$file   = get_plugin_dir() . 'variables.json';
+		$json   = json_decode( file_get_contents( $file ) );
+		$colors = $json->colors->$theme;
+	}
+
+	return $color ? $colors->$color : $colors;
 }
 
 /**

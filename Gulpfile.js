@@ -18,7 +18,8 @@ toolkit.extendConfig(
       'core': [
         './assets/js/hide-show.js',
         './assets/js/smooth-scroll.js',
-        './assets/js/sticky-header.js'
+        './assets/js/sticky-header.js',
+        './assets/js/filters.js'
       ],
       'editor': [
         './assets/js/editor.js'
@@ -35,11 +36,13 @@ toolkit.extendConfig(
       },
       scss: {
         'business-pro-main': {
+          vars: require('./assets/scss/themes/business-pro/variables.json'),
           src: './assets/scss/themes/business-pro/main.scss',
           dest: './assets/css/business-pro/',
           outputStyle: 'compressed',
         },
         'business-pro-editor': {
+          vars: require('./assets/scss/themes/business-pro/variables.json'),
           src: './assets/scss/themes/business-pro/editor.scss',
           dest: './assets/css/business-pro/',
           outputStyle: 'compressed'
@@ -70,4 +73,6 @@ toolkit.extendConfig(
   }
 )
 
-toolkit.extendTasks(gulp, {})
+toolkit.extendTasks(gulp, {
+
+})

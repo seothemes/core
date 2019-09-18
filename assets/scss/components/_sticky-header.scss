@@ -6,6 +6,9 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$sticky-header__background-color: $color--white !default;
+$sticky-header__border-bottom: $base--border !default;
+
 .sticky-header {
 
 	.site-header {
@@ -14,8 +17,8 @@
 		@include transition;
 
 		&.sticky {
-			border-bottom: $base--border;
-			background-color: $color--white;
+			border-bottom: $sticky-header__border-bottom;
+			background-color: $sticky-header__background-color;
 		}
 	}
 

@@ -6,9 +6,52 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.footer-widgets {
-	padding: $spacing--xl 0;
+$footer-widgets__padding: $spacing--xl !default;
+$footer-widgets__background-color: transparent !default;
+$footer-widgets__color: $color--text !default;
+$footer-widgets__font-size: $base--font-size !default;
+$footer-widgets-title__color: $color--heading !default;
+$footer-widgets-title__font-size: $font-size--h5 !default;
+$footer-widgets-link__color: $color--primary !default;
+$footer-widgets-link__color--hover: $color--primary !default;
+$footer-widgets-menu__font-size: $base--font-size !default;
+$footer-widgets-menu__font-family: $base--font-family !default;
+$footer-widgets-menu__font-weight: $base--font-weight !default;
 
+.footer-widgets {
+	padding: $footer-widgets__padding 0;
+	background-color: $footer-widgets__background-color;
+	color: $footer-widgets__color;
+	font-size: $footer-widgets__font-size;
+
+	// Title
+	.widget-title {
+		color: $footer-widgets-title__color;
+		font-size: $footer-widgets-title__font-size;
+	}
+
+	// Link
+	a {
+		color: $footer-widgets-link__color;
+
+		@include hover-focus {
+			color: $footer-widgets-link__color--hover;
+		}
+	}
+
+	// Menu
+	.menu {
+		display: block;
+		columns: 2;
+		font-size: $footer-widgets-menu__font-size;
+		font-family: $footer-widgets-menu__font-family;
+		font-weight: $footer-widgets-menu__font-weight;
+	}
+
+	.menu-item {
+		padding: 0;
+		margin-bottom: $spacing--m;
+	}
 }
 
 // Footer widget area.

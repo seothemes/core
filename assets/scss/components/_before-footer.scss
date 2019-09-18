@@ -6,8 +6,20 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$before-footer__padding: $spacing--xl !default;
+$before-footer__border-bottom: $base--border !default;
+$before-footer__background-color: $color--background !default;
+$before-footer__color: $color--text !default;
+$before-footer-title__font-size: $font-size--h5 !default;
+
 .before-footer {
-	padding: $spacing--xl 0 $spacing--xl - $gutter;
-	border-bottom: $base--border;
-	background-color: $color--background;
+	position: relative;
+	padding: $before-footer__padding 0 $before-footer__padding - $gutter;
+	border-bottom: $before-footer__border-bottom;
+	background-color: $before-footer__background-color;
+	color: $before-footer__color;
+
+	.widget-title {
+		font-size: $before-footer-title__font-size;
+	}
 }

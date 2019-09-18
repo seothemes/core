@@ -110,6 +110,17 @@
 /// @param {String} $media-type ($mq-media-type) - Media type: screen, print…
 /// @param {String} $breakpoints ($mq-breakpoints) - Breakpoints map
 ////
+@function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
+
+	@if map-has-key($breakpoints, $name) {
+
+		@return map-get($breakpoints, $name);
+	} @else {
+
+		@warn "Breakpoint #{$name} wasn't found in $breakpoints.";
+	}
+}
+
 @mixin mq(
 	$from: false,
 	$until: false,

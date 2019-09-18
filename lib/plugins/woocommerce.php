@@ -19,33 +19,22 @@ if ( ! \class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
-add_action('after_setup_theme', __NAMESPACE__ . '\woocommerce_setup');
-/**
- * Set up WooCommerce.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function woocommerce_setup() {
+// Disable all stylesheets.
+\add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-	// Disable all stylesheets.
-	\add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// Unhook WooCommerce sidebar - use Genesis sidebars instead.
+\remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
-	// Unhook WooCommerce sidebar - use Genesis sidebars instead.
-	\remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+// Remove WooCommerce pagination.
+\remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination' );
 
-	// Remove WooCommerce pagination.
-	\remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination' );
+// Unhook WooCommerce wrappers.
+\remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+\remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-	// Unhook WooCommerce wrappers.
-	\remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-	\remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
-	// Reposition add to cart button.
-	\remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-	\add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 15 );
-}
+// Reposition add to cart button.
+\remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+\add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 15 );
 
 \add_filter( 'genesis_site_layout', __NAMESPACE__ . '\shop_page_layout' );
 /**

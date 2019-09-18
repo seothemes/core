@@ -6,11 +6,27 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.footer-credits {
-	font-size: $base--font-size / $major-second;
+$footer-credits__padding-bottom: $gutter !default;
+$footer-credits__background-color: transparent !default;
+$footer-credits__color: $color--text !default;
+$footer-credits-link__color: $color--primary !default;
+$footer-credits-link__color--hover: $color--primary !default;
 
+.footer-credits {
+	padding-bottom: $footer-credits__padding-bottom;
+	font-size: $base--font-size / $major-second;
+	color: $footer-credits__color;
+	background-color: $footer-credits__background-color;
 
 	p {
-		margin-bottom: $gutter;
+		margin-bottom: 0;
+	}
+
+	a {
+		color: $footer-credits-link__color;
+
+		@include hover-focus {
+			color: $footer-credits-link__color--hover;
+		}
 	}
 }

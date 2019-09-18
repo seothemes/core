@@ -9,22 +9,15 @@
  * @license   GPL-2.0-or-later
  */
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\reposition_pagination' );
-/**
- * Reposition pagination and remove alignment classes.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function reposition_pagination() {
-	\remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-	\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_posts_nav' );
-	\remove_action( 'genesis_after_entry', 'genesis_adjacent_entry_nav' );
-	\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_adjacent_entry_nav' );
-	\remove_filter( 'genesis_attr_pagination-previous', 'genesis_adjacent_entry_attr_previous_post' );
-	\remove_filter( 'genesis_attr_pagination-next', 'genesis_adjacent_entry_attr_next_post' );
-}
+// Reposition pagination.
+\remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_posts_nav' );
+\remove_action( 'genesis_after_entry', 'genesis_adjacent_entry_nav' );
+\add_action( 'genesis_after_content_sidebar_wrap', 'genesis_adjacent_entry_nav' );
+
+// Remove alignment classes.
+\remove_filter( 'genesis_attr_pagination-previous', 'genesis_adjacent_entry_attr_previous_post' );
+\remove_filter( 'genesis_attr_pagination-next', 'genesis_adjacent_entry_attr_next_post' );
 
 \add_filter( 'genesis_markup_open', __NAMESPACE__ . '\entry_pagination_wrap_open', 10, 2 );
 /**

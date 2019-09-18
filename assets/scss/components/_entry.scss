@@ -6,12 +6,15 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$entry__border: $base--border !default;
+$entry-title__font-size: $font-size--h4 !default;
+
 .entry {
 
-	.featuredpost &,
+	.featured-content &,
 	.is-archive & {
 		margin-bottom: $gutter;
-		border: $base--border;
+		border: $entry__border;
 		border-radius: $base--border--radius;
 		background-color: $color--white;
 
@@ -30,8 +33,9 @@
 	// Entry title.
 	&-title {
 
+		.featured-content &,
 		.is-archive & {
-			font-size: $font-size--h4;
+			font-size: $entry-title__font-size;
 		}
 
 		a {

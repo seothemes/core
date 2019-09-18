@@ -6,6 +6,11 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$blockquote__padding: $gap !default;
+$blockquote__border-left: $base--border !default;
+$blockquote__background-color: transparent !default;
+$link__text-decoration--hover: underline !default;
+
 body {
 	height: 100%;
 	margin: 0;
@@ -29,7 +34,7 @@ a {
 
 	@include hover-focus {
 		color: $color--primary;
-		text-decoration: underline;
+		text-decoration: $link__text-decoration--hover;
 	}
 }
 
@@ -64,17 +69,26 @@ i {
 }
 
 blockquote {
-	border-left: $base__border;
+	border-left: $blockquote__border-left;
+	background-color: $blockquote__background-color;
 
 	@include margin($spacing--m auto);
-	@include padding($spacing--m);
+	@include padding($blockquote__padding);
 
 	p {
+		padding: $spacing--s 0;
 
 		&:last-of-type {
 			margin-bottom: 0;
 		}
 	}
+}
+
+cite {
+	display: block;
+	font-weight: bolder;
+	font-style: normal;
+	font-family: $font-family--heading;
 }
 
 code,

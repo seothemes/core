@@ -6,6 +6,13 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$sub-menu__width: $spacing--xxxl * $major-third !default;
+$sub-menu__border: $base--border !default;
+$sub-menu__border-radius: 0 !default;
+$sub-menu__background-color: $color--white !default;
+$sub-menu-link__color: $color--text !default;
+
+// Sub menu
 .sub-menu {
 	display: none;
 	top: 100%;
@@ -14,11 +21,30 @@
 	list-style-type: none;
 
 	@include mq(m) {
+		display: block;
 		position: absolute;
-		width: $spacing--xxxl * $major-third;
+		left: -999rem;
+		width: $sub-menu__width;
 		margin-left: -$spacing--m;
-		border: $base--border;
-		background-color: $color--white;
+		border: $sub-menu__border;
+		border-radius: $sub-menu__border-radius;
+		background-color: $sub-menu__background-color;
+		opacity: 0;
+		transition: opacity $base--transition-duration $base--transition-timing-function;
+
+		@include padding($spacing--s null);
+
+		&:before {
+			content: '';
+
+			@include position(absolute, -$spacing--xxs null null $spacing--m);
+			@include triangle("up", $spacing--s, $spacing--xxs, $color--white);
+		}
+	}
+
+	// Link.
+	a {
+		color: $sub-menu-link__color;
 	}
 
 	// Hovered state.
@@ -27,7 +53,8 @@
 	.menu-item-has-children:focus-within > & {
 
 		@include mq(m) {
-			display: block;
+			left: auto;
+			opacity: 1;
 		}
 	}
 

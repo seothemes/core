@@ -6,6 +6,13 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$site-title__font-size: 1em !default;
+$site-title__font-family: $font-family--heading !default;
+$site-title__color: $color--text !default;
+$site-title__color--hover: $color--primary !default;
+$site-description__color: $color--text !default;
+
+// Title area.
 .title-area {
 	line-height: $line-height--heading;
 
@@ -22,6 +29,7 @@
 	margin: 0;
 	font-size: $site-title__font-size;
 	font-weight: $font-weight--semibold;
+	font-family: $site-title__font-family;
 
 	.wp-custom-logo & {
 

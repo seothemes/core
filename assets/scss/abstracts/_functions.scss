@@ -17,13 +17,4 @@
 /// @requires {Variable} $mq-breakpoints
 ///
 /// @returns {Number} Value in pixels
-@function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
 
-	@if map-has-key($breakpoints, $name) {
-
-		@return map-get($breakpoints, $name);
-	} @else {
-
-		@warn "Breakpoint #{$name} wasn't found in $breakpoints.";
-	}
-}

@@ -6,6 +6,12 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$hero-section__padding--mobile: $spacing--l 0 !default;
+$hero-section__color: $color--text !default;
+$hero-section__padding--desktop: $spacing--xl 0 !default;
+$hero-heading__font-size: $font-size--h1 !default;
+$hero-heading__color: $color--text !default;
+
 @mixin hero-section {
 	display: flex;
 	flex-wrap: wrap;

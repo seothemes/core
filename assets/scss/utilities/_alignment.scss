@@ -8,20 +8,23 @@
 
 .align {
 
-	&left {
-		float: left;
-		margin: 0 $spacing--m 0 0;
-	}
+	@include mq(m) {
 
-	&right {
-		float: right;
-		margin: 0 0 $spacing--m 0;
-	}
+		&left {
+			float: left;
+			margin: 0 $spacing--m 0 0;
+		}
 
-	&center {
-		margin: 0 auto;
+		&right {
+			float: right;
+			margin: 0 0 $spacing--m 0;
+		}
 
-		@include clearfix;
+		&center {
+			margin: 0 auto;
+
+			@include clearfix;
+		}
 	}
 
 	&wide,
@@ -55,5 +58,20 @@
 	&full {
 		max-width: none;
 		margin-left: -50vw;
+	}
+}
+
+.text {
+
+	&-left {
+		text-align: left;
+	}
+
+	&-center {
+		text-align: center;
+	}
+
+	&-right {
+		text-align: right;
 	}
 }

@@ -58,8 +58,16 @@ msgstr ""
 msgid "Please install a valid SEO Themes child theme when using SEO Themes core."
 msgstr ""
 
+#: lib/admin/widget-classes.php:27
+msgid "Additional Classes:"
+msgstr ""
+
 #: lib/functions/header.php:105
 msgid "Hero Image"
+msgstr ""
+
+#: lib/shortcodes/terms-filter.php:46
+msgid "All"
 msgstr ""
 
 #: lib/structure/hero.php:116
