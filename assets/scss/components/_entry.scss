@@ -6,17 +6,23 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$entry__border: $base--border !default;
-$entry-title__font-size: $font-size--h4 !default;
+$entry-margin-bottom: $gutter !default;
+$entry-border-radius: $base-border-radius !default;
+$entry-background-color: $color-white !default;
+$entry-border: $base-border !default;
+$entry-title-font-size: $font-size-h4 !default;
+$entry-meta-font-size: smaller !default;
+$entry-image-border-radius: $base-border-radius $base-border-radius 0 0 !default;
+$entry-wrap-padding: $gap !default;
 
 .entry {
 
 	.featured-content &,
 	.is-archive & {
-		margin-bottom: $gutter;
-		border: $entry__border;
-		border-radius: $base--border--radius;
-		background-color: $color--white;
+		margin-bottom: $entry-margin-bottom;
+		border: $entry-border;
+		border-radius: $entry-border-radius;
+		background-color: $entry-background-color;
 
 		&:last-of-type {
 
@@ -35,14 +41,15 @@ $entry-title__font-size: $font-size--h4 !default;
 
 		.featured-content &,
 		.is-archive & {
-			font-size: $entry-title__font-size;
+			font-size: $entry-title-font-size;
 		}
 
 		a {
-			color: $color--text;
+			color: $color-heading;
 
 			@include hover-focus {
-				color: $color--primary;
+				color: $link-color-hover;
+				text-decoration: $link-text-decoration-hover;
 			}
 		}
 	}
@@ -73,7 +80,7 @@ $entry-title__font-size: $font-size--h4 !default;
 
 	// Entry meta.
 	&-meta {
-		font-size: smaller;
+		font-size: $entry-meta-font-size;
 	}
 
 	// Entry image link.
@@ -82,7 +89,7 @@ $entry-title__font-size: $font-size--h4 !default;
 
 		img {
 			min-width: 100%;
-			border-radius: $base--border--radius $base--border--radius 0 0;
+			border-radius: $entry-image-border-radius;
 		}
 	}
 
@@ -118,7 +125,7 @@ $entry-title__font-size: $font-size--h4 !default;
 
 	// Entry wrap.
 	&-wrap {
-		padding: $gap;
+		padding: $entry-wrap-padding;
 	}
 }
 

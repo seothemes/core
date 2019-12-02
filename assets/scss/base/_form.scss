@@ -6,9 +6,34 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$all-text-inputs: append($all-text-inputs, "select");
+
+$label-margin: 0 0 $spacing-s !default;
+$label-font-size: $base-font-size!default;
+$label-font-weight: $font-weight-heading !default;
+$input-margin: 0 0 $spacing-s !default;
+$input-padding: 1em !default;
+$input-font-size: $base-font-size !default;
+$input-color: $color-body !default;
+$input-background-color: $color-white !default;
+$input-border: $base-border !default;
+$input-border-width: $base-border-width !default;
+$input-border-color: $base-border-color !default;
+$input-border-radius: $base-border-radius !default;
+$input-focus-border-color: $color-primary !default;
+$input-placeholder-color: $color-muted !default;
+$input-disabled-border-color: $color-border !default;
+$input-disabled-background-color: $color-muted !default;
+$textarea-line-height: $base-line-height !default;
+$select-height: calc((#{$base-font-size} / #{$major-second}) + #{$base-font-size} * 2) !default;
+$select-padding: 0 null !default;
+$legend-margin: 0 0 $spacing-s !default;
+$legend-padding: 0 !default;
+$legend-font-size: $font-size-h5 !default;
+
 ::placeholder {
 	opacity: 1; // Firefox fix
-	color: $color--muted;
+	color: $input-placeholder-color;
 }
 
 abbr[title] {
@@ -17,52 +42,56 @@ abbr[title] {
 
 label {
 	display: inline-block;
-	margin: 0 0 $spacing--s;
-	font-size: $base--font-size;
-	font-weight: $font-weight--semibold;
+	margin: $label-margin;
+	font-size: $label-font-size;
+	font-weight: $label-font-weight;
 
 	i + &,
 	input + &,
 	select + &,
 	textarea + & {
 		font-size: smaller;
-		font-weight: $font-weight--regular;
+		font-weight: $font-weight-regular;
 	}
 }
 
-input,
-select,
-textarea {
+#{$all-text-inputs} {
 	width: 100%;
-	margin: 0 0 $spacing--s;
-	padding: 1em;
-	border: $base--border;
-	border-radius: $base--border--radius;
+	margin: $input-margin;
+	padding: $input-padding;
+	border-width: $input-border-width;
+	border-style: solid;
+	border-color: $input-border-color;
+	border-radius: $input-border-radius;
+	color: $input-color;
+	background-color: $input-background-color;
 	background-clip: padding-box; // Remove iOS box shadow
 	box-shadow: none;
-	font-size: $base--font-size;
+	font-size: $input-font-size;
+
+	@include transition;
 
 	&:focus {
-		border-color: $color--primary;
+		border-color: $input-focus-border-color;
 		outline: none;
 	}
 
 	&:disabled,
 	&:disabled:hover {
-		border-color: $color--border;
-		background-color: $color--muted;
+		border-color: $input-disabled-border-color;
+		background-color: $input-disabled-background-color;
 		cursor: not-allowed;
 	}
 }
 
 textarea {
-	line-height: $base--line-height;
+	line-height: $textarea-line-height;
 }
 
 select {
-	height: calc((#{$base--font-size} / #{$major-second}) + #{$base--font-size} * 2);
+	height: $select-height;
 
-	@include padding(0 null);
+	@include padding($select-padding);
 }
 
 select[multiple] {
@@ -73,11 +102,11 @@ input[type="checkbox"],
 input[type="image"],
 input[type="radio"] {
 	width: auto;
-	margin-right: $spacing--s;
+	margin-right: $spacing-s;
 }
 
 input[type="color"] {
-	min-height: $spacing--xl;
+	min-height: $spacing-xl;
 }
 
 input[type="search"] {
@@ -104,9 +133,9 @@ legend {
 	display: table;
 	float: left;
 	width: 100%;
-	margin: 0 0 $spacing--s;
-	padding: 0;
-	font-size: $font-size--h5;
+	margin:$legend-margin;
+	padding: $legend-padding;
+	font-size: $legend-font-size;
 
 	@include heading;
 

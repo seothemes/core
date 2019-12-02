@@ -1,23 +1,25 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
+namespace SeoThemes\Engine;
+
+use function SeoThemes\Engine\Functions\get_default_color;
 
 return [
 	'alignment'              => 'alignleft',
-	'background_color'       => '#f5f5f5',
-	'background_color_hover' => '#333333',
+	'background_color'       => '',
+	'background_color_hover' => '',
 	'border_radius'          => 3,
 	'border_width'           => 0,
-	'icon_color'             => '#333333',
-	'icon_color_hover'       => '#ffffff',
+	'icon_color'             => get_default_color( 'heading' ),
+	'icon_color_hover'       => get_default_color( 'primary' ),
 	'size'                   => 40,
 ];

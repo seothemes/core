@@ -20,9 +20,9 @@
 
 .woocommerce-MyAccount-navigation {
 	padding: $gap;
-	border: $base--border;
-	border-radius: $base--border--radius;
-	background-color: $color--background;
+	border: $base-border;
+	border-radius: $base-border-radius;
+	background-color: $color-background;
 
 	@include mq(m) {
 		width: $one-fourth;

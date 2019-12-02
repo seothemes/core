@@ -114,7 +114,7 @@
 
 	h2 {
 		padding-bottom: 0.5em;
-		border-bottom: $base--border;
+		border-bottom: $base-border;
 	}
 }
 
@@ -124,12 +124,12 @@
 }
 
 .gf_progressbar {
-	background: $color--border;
+	background: $color-border;
 }
 
 .gf_progressbar_percentage {
 	padding: 0.5em 0.5em;
-	background: $color--primary;
+	background: $color-primary;
 	text-align: right;
 }
 
@@ -274,9 +274,9 @@ li {
 
 .ui-datepicker {
 	padding: 0.5em;
-	border: $base--border;
-	border-radius: $base--border--radius;
-	background-color: $color--white;
+	border: $base-border;
+	border-radius: $base-border-radius;
+	background-color: $color-white;
 
 	&-header {
 		display: flex;

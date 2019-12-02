@@ -1,17 +1,17 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Structure;
+namespace SeoThemes\Engine\Structure;
 
-use function SeoThemes\Core\Functions\get_config;
+use function SeoThemes\Engine\Functions\get_config;
 
 \add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\\setup_comments_gravatar' );
 /**

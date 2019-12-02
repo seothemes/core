@@ -1,15 +1,33 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Structure;
+namespace SeoThemes\Engine\Structure;
+
+\add_action( 'child_theme_setup', __NAMESPACE__ . '\site_header_options' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function site_header_options() {
+	if ( \get_theme_mod( 'transparent_header', 0 ) ) {
+		\add_theme_support( 'transparent-header' );
+	}
+
+	if ( \get_theme_mod( 'sticky_header', 0 ) ) {
+		\add_theme_support( 'sticky-header' );
+	}
+}
 
 \add_filter( 'genesis_markup_title-area_close', __NAMESPACE__ . '\title_area_hook', 10, 1 );
 /**

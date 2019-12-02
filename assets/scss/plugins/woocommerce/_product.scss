@@ -14,22 +14,22 @@
 		margin-right: $gutter;
 	}
 
-	&__trigger {
+	&-trigger {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
-		border-radius: $spacing--l;
-		background-color: $color--white;
+		border-radius: $spacing-l;
+		background-color: $color-white;
 
-		@include size($spacing--l);
+		@include size($spacing-l);
 		@include position(absolute, 1em 1em null null);
 
 		@include hover-focus {
 			text-decoration: none;
 
 			&:before {
-				color: $color--primary;
+				color: $color-primary;
 			}
 		}
 
@@ -39,7 +39,7 @@
 		}
 
 		&:before {
-			color: $color--heading;
+			color: $color-heading;
 			font-size: smaller;
 
 			@include transition;
@@ -54,12 +54,12 @@
 
 .flex-control-nav {
 	display: flex;
-	margin-top: $spacing--s;
+	margin-top: $spacing-s;
 	list-style-type: none;
 
 	li {
 		flex: 1;
-		margin-right: $spacing--s;
+		margin-right: $spacing-s;
 
 		&:last-of-type {
 			margin-right: 0;
@@ -96,29 +96,29 @@ form.cart {
 	display: flex;
 	width: 100%;
 	margin-bottom: $gap;
-	border-bottom: $base--border;
+	border-bottom: $base-border;
 
 	li {
 		margin-bottom: -1px;
-		padding: $spacing--m $spacing--l;
-		border: $base--border;
+		padding: $spacing-m $spacing-l;
+		border: $base-border;
 		border-right: 0;
-		background-color: $color--background;
+		background-color: $color-background;
 		list-style-type: none;
 
 		&.active {
-			border-bottom-color: $color--white;
-			background-color: $color--white;
+			border-bottom-color: $color-white;
+			background-color: $color-white;
 		}
 
 		&:last-of-type {
-			border-right: $base--border;
+			border-right: $base-border;
 		}
 	}
 }
 
 .comment-reply-title {
-	font-size: $font-size--h3;
+	font-size: $font-size-h3;
 
 	@include heading();
 }
@@ -136,9 +136,9 @@ form.cart {
 
 		&:before {
 			display: block;
-			color: $color--warning;
+			color: $color-warning;
 			font-family: "Font Awesome 5 Free", sans-serif;
-			font-size: $spacing--m;
+			font-size: $spacing-m;
 
 			@include icon();
 		}
@@ -195,16 +195,16 @@ form.cart {
 
 	.entry {
 		margin-bottom: $gutter;
-		border: $base--border;
-		border-radius: $base--border--radius;
+		border: $base-border;
+		border-radius: $base-border-radius;
 	}
 
-	.woocommerce-loop-product__title {
-		font-size: $font-size--h5;
+	.woocommerce-loop-product-title {
+		font-size: $font-size-h5;
 	}
 
 	.button {
 
-		@include padding($spacing--m $spacing--m * $minor-third);
+		@include padding($spacing-m $spacing-m * $minor-third);
 	}
 }

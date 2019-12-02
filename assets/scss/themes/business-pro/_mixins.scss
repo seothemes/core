@@ -1,0 +1,35 @@
+////
+/// Business Pro mixins.
+///
+/// @group  Themes
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin front-page-1 {
+
+	@include mq(m) {
+		padding: $spacing-xxxl * $minor-third 0 $spacing-xxxl * $minor-third - $gutter;
+	}
+}
+
+@mixin front-page-3 {
+	background-color: $color-background;
+}
+
+@mixin front-page-4 {
+	color: $color-border;
+
+	@include mq(m) {
+		padding: $spacing-xxxl * $minor-third;
+	}
+}
+
+@mixin front-page-5 {
+	padding: $spacing-xl 0 $spacing-xl - $gutter;
+	background-color: $color-white;
+}
+
+@mixin front-page-6 {
+	background-color: $color-background;
+}

@@ -6,8 +6,9 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$sticky-header__background-color: $color--white !default;
-$sticky-header__border-bottom: $base--border !default;
+$sticky-header-background-color: $color-white !default;
+$sticky-header-border-bottom: $base-border !default;
+$sticky-title-area-padding: $spacing-m null !default;
 
 .sticky-header {
 
@@ -15,17 +16,25 @@ $sticky-header__border-bottom: $base--border !default;
 		position: fixed;
 
 		@include transition;
-
-		&.sticky {
-			border-bottom: $sticky-header__border-bottom;
-			background-color: $sticky-header__background-color;
-		}
 	}
 
 	.hero-section {
 
 		.wrap {
-			margin-top: $spacing--xxl;
+			margin-top: $spacing-xxl;
 		}
+	}
+}
+
+.sticky {
+
+	&.site-header {
+		border-bottom: $sticky-header-border-bottom;
+		background-color: $sticky-header-background-color;
+	}
+
+	.title-area {
+
+		@include padding($sticky-title-area-padding);
 	}
 }

@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Functions;
+namespace SeoThemes\Engine\Functions;
 
 \add_action( 'after_switch_theme', __NAMESPACE__ . '\default_theme_settings' );
 /**
@@ -53,6 +53,7 @@ function default_social_styles( $defaults ) {
  * @return array
  */
 function icon_widget_defaults( $defaults ) {
+	$defaults['color']   = get_default_color( 'primary' );
 	$defaults['weight']  = '400';
 	$defaults['size']    = '3x';
 	$defaults['align']   = 'center';

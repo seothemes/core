@@ -6,11 +6,15 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$hero-section__padding--mobile: $spacing--l 0 !default;
-$hero-section__color: $color--text !default;
-$hero-section__padding--desktop: $spacing--xl 0 !default;
-$hero-heading__font-size: $font-size--h1 !default;
-$hero-heading__color: $color--text !default;
+$hero-section-padding-mobile: $spacing-l 0 !default;
+$hero-section-color: $color-body !default;
+$hero-section-padding-desktop: $spacing-xl 0 !default;
+$hero-section-border-bottom: $base-border !default;
+$hero-heading-font-size-mobile: $font-size-h1 !default;
+$hero-heading-font-size-desktop: $font-size-h1 !default;
+$hero-heading-color: $color-body !default;
+$hero-heading-margin-bottom: 0 !default;
+$hero-text-margin-top: $spacing-m !default;
 
 @mixin hero-section {
 	display: flex;
@@ -18,18 +22,18 @@ $hero-heading__color: $color--text !default;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	padding: $hero-section__padding--mobile;
-	border-bottom: $base--border;
+	padding: $hero-section-padding-mobile;
+	border-bottom: $hero-section-border-bottom;
 	background-position: center;
 	background-size: cover;
 	text-align: center;
-	color: $hero-section__color;
+	color: $hero-section-color;
 
 	@include overlay;
 
 	@include mq(m) {
 
-		padding: $hero-section__padding--desktop;
+		padding: $hero-section-padding-desktop;
 	}
 
 	.wrap {
@@ -39,13 +43,17 @@ $hero-heading__color: $color--text !default;
 
 	h1 {
 		width: 100%;
-		margin-bottom: 0;
-		color: $hero-heading__color;
-		font-size: $hero-heading__font-size;
+		margin-bottom: $hero-heading-margin-bottom;
+		color: $hero-heading-color;
+		font-size: $hero-heading-font-size-mobile;
+
+		@include mq(m) {
+			font-size: $hero-heading-font-size-desktop;
+		}
 	}
 
 	p {
-		margin-top: $spacing--m;
+		margin-top: $hero-text-margin-top;
 		margin-bottom: 0;
 	}
 }

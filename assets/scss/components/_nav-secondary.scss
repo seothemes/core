@@ -6,16 +6,21 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$nav-secondary-background-color: transparent !default;
+$nav-secondary-border-top: $base-border !default;
+$nav-secondary-alignment: flex-start !default;
+
 .nav-secondary {
+	background-color: $nav-secondary-background-color;
 
 	@include mq(m) {
-		border-top: $base--border;
+		border-top: $nav-secondary-border-top;
 	}
 
 	.menu {
 
 		@include mq(m) {
-			justify-content: flex-start;
+			justify-content: $nav-secondary-alignment;
 		}
 	}
 }

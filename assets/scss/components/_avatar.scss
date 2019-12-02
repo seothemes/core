@@ -6,8 +6,12 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$avatar-float: left !default;
+$avatar-margin-right: $spacing-m !default;
+$avatar-border-radius: $base-border-radius !default;
+
 .avatar {
-	float: left;
-	margin-right: $spacing--m;
-	border-radius: $base--border--radius;
+	float: $avatar-float;
+	margin-right: $avatar-margin-right;
+	border-radius: $avatar-border-radius;
 }

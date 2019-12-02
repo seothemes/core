@@ -1,20 +1,20 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
+namespace SeoThemes\Engine;
 
-use function SeoThemes\Core\Functions\get_config;
-use function SeoThemes\Core\Functions\get_plugin_url;
-use function SeoThemes\Core\Functions\get_active_theme;
-use function SeoThemes\Core\Functions\get_plugin_handle;
+use function SeoThemes\Engine\Functions\get_config;
+use function SeoThemes\Engine\Functions\get_plugin_url;
+use function SeoThemes\Engine\Functions\get_active_theme;
+use function SeoThemes\Engine\Functions\get_plugin_handle;
 
 $asset_url    = \trailingslashit( get_plugin_url() . 'assets' );
 $google_fonts = \implode( '|', get_config( 'google-fonts' ) );
@@ -30,7 +30,7 @@ return [
 		],
 		[
 			'handle'    => get_plugin_handle(),
-			'src'       => $asset_url . 'js/min/core.min.js',
+			'src'       => $asset_url . 'js/min/main.min.js',
 			'deps'      => [ 'jquery' ],
 			'condition' => function () {
 				return ! \genesis_is_amp();

@@ -18,7 +18,7 @@
 		order: 2;
 	}
 
-	&__title {
+	&-title {
 		order: 1;
 		width: 100%;
 	}
@@ -106,14 +106,14 @@
 	}
 }
 
-.woocommerce-loop-product__title {
+.woocommerce-loop-product-title {
 	margin-bottom: auto;
-	font-size: $font-size--h6;
+	font-size: $font-size-h6;
 }
 
 .add_to_cart_button {
 	margin-top: auto;
-	padding: $spacing--m $gap;
+	padding: $spacing-m $gap;
 	transition: none;
 
 	&:after {
@@ -125,12 +125,12 @@
 }
 
 .added {
-	padding: $spacing--m;
+	padding: $spacing-m;
 	font-size: 0;
 	align-self: flex-start;
 
 	&:after {
-		font-size: $base--font-size / $major-second;
+		font-size: $base-font-size / $major-second;
 	}
 }
 
@@ -139,27 +139,27 @@
 	@include button;
 
 	align-self: flex-end;
-	margin-left: $spacing--s;
-	padding: $spacing--m - 0.1rem;
-	border: 1px solid $color--primary;
-	color: $color--primary;
+	margin-left: $spacing-s;
+	padding: $spacing-m - 0.1rem;
+	border: 1px solid $color-primary;
+	color: $color-primary;
 	background: transparent;
 
 	@include hover-focus {
-		color: $color--white;
-		background: $color--primary;
+		color: $color-white;
+		background: $color-primary;
 	}
 }
 
 .star-rating {
 	display: block;
-	margin-bottom: $spacing--xxs;
+	margin-bottom: $spacing-xxs;
 
 	&:before {
 		display: inline-block;
-		color: $color--warning;
+		color: $color-warning;
 		font-family: "Font Awesome 5 Free", sans-serif;
-		font-size: $spacing--m;
+		font-size: $spacing-m;
 		font-weight: 700;
 		letter-spacing: 0.2em;
 		content: "\f005";
@@ -207,7 +207,7 @@
 
 .price {
 	display: block;
-	margin-bottom: $spacing--m;
+	margin-bottom: $spacing-m;
 
 	ins {
 		text-decoration: none;

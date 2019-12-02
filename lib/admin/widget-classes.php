@@ -1,6 +1,15 @@
 <?php
+/**
+ * SEO Themes Engine.
+ *
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
+ * @author    SEO Themes
+ * @copyright Copyright © 2019 SEO Themes
+ * @license   GPL-2.0-or-later
+ */
 
-namespace SeoThemes\Core\Admin;
+namespace SeoThemes\Engine\Admin;
 
 add_action( 'in_widget_form', __NAMESPACE__ . '\in_widget_form', 5, 3 );
 /**
@@ -24,7 +33,7 @@ function in_widget_form( $widget, $return, $instance ) {
 
 	?>
 	<p style="border: 1px solid #eee; padding: 5px 10px; background-color: #f5f5f5;">
-		<label for="<?php echo $field_name; ?>"><?php esc_html_e( 'Additional Classes:', 'seothemes-core' ); ?>
+		<label for="<?php echo $field_name; ?>"><?php esc_html_e( 'Additional Classes:', 'seothemes-engine' ); ?>
 			&nbsp;</label>
 		<input type="text" name="<?php echo $field_name; ?>" id="<?php echo $widget->get_field_id( 'classes' ); ?>" value="<?php echo $instance['classes']; ?>"/>
 	</p>

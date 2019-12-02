@@ -6,6 +6,13 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$modal-padding: $gutter !default;
+$modal-border-radius: $base-border-radius !default;
+$modal-background-color: $color-white !default;
+$modal-box-shadow: 0 0 0 100vw rgba($color-heading, 0.2), $base-box-shadow !default;
+$modal-text-align: center !default;
+$modal-text-margin-bottom: $spacing-m !default;
+
 .modal {
 	display: none;
 	flex-wrap: wrap;
@@ -13,12 +20,12 @@
 	align-items: center;
 	align-content: center;
 	z-index: 999;
-	padding: $gutter;
-	border-radius: $base--border--radius;
+	padding: $modal-padding;
+	border-radius: $modal-border-radius;
 	opacity: 0;
-	background-color: $color--white;
-	box-shadow: 0 0 0 100vw rgba($color--dark, 0.2), $base--box-shadow;
-	text-align: center;
+	background-color: $modal-background-color;
+	box-shadow: $modal-box-shadow;
+	text-align: $modal-text-align;
 
 	@include position(fixed, 10vh 10vw);
 
@@ -29,7 +36,7 @@
 
 	p {
 		margin-top: 0;
-		margin-bottom: $spacing--m;
+		margin-bottom: $modal-text-margin-bottom;
 	}
 }
 
@@ -42,7 +49,7 @@
 	background-color: transparent;
 	font-size: 0;
 
-	@include size($base--font-size);
+	@include size($base-font-size);
 	@include size($gap);
 
 	@include hover-focus {
@@ -51,7 +58,7 @@
 	}
 
 	&:before {
-		font-size: $base--font-size;
+		font-size: $base-font-size;
 
 		@include icon("\f00d", 700);
 	}

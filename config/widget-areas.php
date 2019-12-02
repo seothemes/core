@@ -1,46 +1,29 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
-
-use function SeoThemes\Core\Functions\get_config;
-
-$front_page_widgets = [];
-$theme_supports     = get_config( 'theme-support' )['add'];
-
-for ( $i = 1; $i <= $theme_supports['front-page-widgets']; $i++ ) {
-	$front_page_widgets[] = [
-		'id'          => 'front-page-' . $i,
-		'name'        => __( 'Front Page ', 'genesis-starter-theme' ) . $i,
-		/* translators: The front page widget area number. */
-		'description' => \sprintf( __( 'The Front Page %s widget area.', 'genesis-starter-theme' ), $i ),
-	];
-}
+namespace SeoThemes\Engine;
 
 return [
-	'add'    => \array_merge_recursive(
+	'add'    => [
 		[
-			[
-				'id'          => 'before-header',
-				'name'        => __( 'Before Header', 'genesis-starter-theme' ),
-				'description' => __( 'The Before Header widget area.', 'genesis-starter-theme' ),
-			],
-			[
-				'id'          => 'before-footer',
-				'name'        => __( 'Before Footer', 'genesis-starter-theme' ),
-				'description' => __( 'The Before Footer widget area.', 'genesis-starter-theme' ),
-			],
+			'id'          => 'before-header',
+			'name'        => __( 'Before Header', 'genesis-starter-theme' ),
+			'description' => __( 'The Before Header widget area.', 'genesis-starter-theme' ),
 		],
-		$front_page_widgets
-	),
+		[
+			'id'          => 'before-footer',
+			'name'        => __( 'Before Footer', 'genesis-starter-theme' ),
+			'description' => __( 'The Before Footer widget area.', 'genesis-starter-theme' ),
+		],
+	],
 	'remove' => [
 		'sidebar-alt',
 	],

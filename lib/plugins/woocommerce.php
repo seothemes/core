@@ -1,18 +1,18 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Plugins;
+namespace SeoThemes\Engine\Plugins;
 
-use function SeoThemes\Core\Functions\get_plugin_url;
-use function SeoThemes\Core\Functions\has_hero_section;
+use function SeoThemes\Engine\Functions\get_plugin_url;
+use function SeoThemes\Engine\Functions\has_hero_section;
 
 // Bail if WooCommerce is not active.
 if ( ! \class_exists( 'WooCommerce' ) ) {

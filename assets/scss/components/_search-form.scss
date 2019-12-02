@@ -6,4 +6,7 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-.search-form {}
+.search-form {
+
+	@include search-form();
+}

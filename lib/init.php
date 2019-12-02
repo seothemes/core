@@ -1,39 +1,54 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
+namespace SeoThemes\Engine;
 
-add_action( 'setup_theme', __NAMESPACE__ . '\load_genesis', 100 );
+\add_action( 'setup_theme', __NAMESPACE__ . '\load_genesis', 100 );
 /**
  * Starts the engine.
  *
  * Enables the use of `genesis_*` functions in the child theme functions.php file,
- * without the need for require_once get_template_directory() . '/lib/init.php'
+ * without the need for require_once get_template_directory() . '/lib/init.php'.
+ * This allows us to provide a truly blank child theme for users to work with.
  *
  * @since 1.0.0
  *
  * @return void
  */
 function load_genesis() {
-	defined( 'TEMPLATEPATH' ) || define( 'TEMPLATEPATH', \get_template_directory() );
-	defined( 'STYLESHEETPATH' ) || define( 'STYLESHEETPATH', \get_stylesheet_directory() );
+	$init = \get_template_directory() . '/lib/init.php';
 
-	$init = TEMPLATEPATH . '/lib/init.php';
-
-	if ( is_readable( $init ) ) {
+	if ( \is_readable( $init ) ) {
 		require_once $init;
 	}
 }
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\child_theme_init', 100 );
+\add_action( 'genesis_init', __NAMESPACE__ . '\remove_genesis_theme_supports', 5 );
+/**
+ * Removes all Genesis functions that use the is_child_theme() function.
+ *
+ * Since we are loading Genesis on behalf of the child theme, functions won't
+ * correctly. This little workaround fixes that issue by removing functions
+ * that contain the check and adds theme support that is required early.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function remove_genesis_theme_supports() {
+	\remove_action( 'genesis_init', 'genesis_theme_support' );
+	\add_theme_support( 'genesis-breadcrumbs' );
+}
+
+\add_action( 'genesis_setup', __NAMESPACE__ . '\child_theme_init', 100 );
 /**
  * Initialize plugin files.
  *
@@ -70,6 +85,7 @@ function child_theme_init() {
 		'structure/home',
 		'structure/menus',
 		'structure/pagination',
+		'structure/sidebar',
 		'structure/single',
 		'structure/wrap',
 
@@ -78,6 +94,7 @@ function child_theme_init() {
 		'shortcodes/search-form',
 		'shortcodes/widget-area',
 		'shortcodes/terms-filter',
+		'shortcodes/back-to-top',
 
 		// Plugins.
 		'plugins/gravity-forms',
@@ -86,6 +103,12 @@ function child_theme_init() {
 		// Admin.
 		'admin/notices',
 		'admin/widget-classes',
+
+		// Customizer.
+		'customize/register',
+		'customize/header',
+		'customize/widgets',
+		'customize/colors',
 	];
 
 	foreach ( $files as $file ) {
@@ -99,21 +122,14 @@ function child_theme_init() {
 	// Load specific functionality for active theme.
 	$active_theme = __DIR__ . '/themes/' . Functions\get_active_theme() . '.php';
 
-	if ( is_readable( $active_theme ) ) {
+	if ( \is_readable( $active_theme ) ) {
 		require_once $active_theme;
 	}
 
 	/**
-	 * Fires during child theme intialization.
+	 * Fires after child theme setup.
 	 *
 	 * @since 1.0.0
 	 */
-	do_action( 'child_theme_init' );
-
-	/**
-	 * Fires after child theme initialization.
-	 *
-	 * @since 1.0.0
-	 */
-	do_action( 'child_theme_setup' );
+	\do_action( 'child_theme_setup' );
 }

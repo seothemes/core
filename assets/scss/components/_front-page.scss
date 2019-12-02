@@ -6,28 +6,20 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$front-page-widget-area__padding--desktop: $spacing--xxl !default;
-$front-page-widget-area__border-bottom: $base--border !default;
-$front-page-1__spacing--desktop: $spacing--xxxl !default;
-$front-page-3__background-color: transparent !default;
-$front-page-4__padding--desktop: $front-page-widget-area__padding--desktop !default;
-$front-page-5__background-color: $color--background !default;
-$front-page-6__background-color: $color--background !default;
+$front-page-widget-area-padding-mobile: $spacing-xl 0 $spacing-xl - $gutter !default;
+$front-page-widget-area-padding-desktop: $spacing-xxl 0 $spacing-xxl - $gutter !default;
+$front-page-widget-area-border-bottom: $base-border !default;
+$front-page-1-padding-mobile: $spacing-xxl 0 $spacing-xxl - $gap !default;
+$front-page-1-padding-desktop: $spacing-xxxl 0 $spacing-xxxl - $gap !default;
 
-[src*="placeholder.com"] {
-	padding: $spacing--xxs;
-	border: $base--border;
-	border-radius: $base--border--radius;
-}
-
-[class*="front-page-"] {
+[class^="front-page-"] {
 	position: relative;
 	width: 100%;
-	padding: $spacing--xl 0 $spacing--xl - $gutter;
-	border-bottom: $front-page-widget-area__border-bottom;
+	padding: $front-page-widget-area-padding-mobile;
+	border-bottom: $front-page-widget-area-border-bottom;
 
 	@include mq(m) {
-		padding: $front-page-widget-area__padding--desktop 0 $front-page-widget-area__padding--desktop - $gutter;
+		padding: $front-page-widget-area-padding-desktop;
 	}
 
 	&:last-of-type {
@@ -38,31 +30,58 @@ $front-page-6__background-color: $color--background !default;
 .front-page {
 
 	&-1 {
-		padding: $spacing--xxl 0 $spacing--xxl - $gap;
+		padding: $front-page-1-padding-mobile;
 
 		@include mq(m) {
 
-			@include padding($front-page-1__spacing--desktop 0 $front-page-1__spacing--desktop - $gap);
+			@include padding($front-page-1-padding-desktop);
 		}
+
+		.has-home-slider & {
+			display: block;
+			padding: 0;
+		}
+
+		@include front-page-1()
+	}
+
+	&-2 {
+
+		@include front-page-2()
 	}
 
 	&-3 {
-		background-color: $front-page-3__background-color;
+
+		@include front-page-3()
 	}
 
 	&-4 {
 
-		@include mq(m) {
-			padding: $front-page-4__padding--desktop 0 $front-page-4__padding--desktop - $gutter
-		}
+		@include front-page-4;
 	}
 
 	&-5 {
-		padding: $spacing--xl 0 $spacing--xl - $gutter;
-		background-color: $front-page-5__background-color;
+
+		@include front-page-5;
 	}
 
 	&-6 {
-		background-color: $front-page-6__background-color;
+
+		@include front-page-6;
+	}
+
+	&-7 {
+
+		@include front-page-7;
+	}
+
+	&-8 {
+
+		@include front-page-8;
+	}
+
+	&-9 {
+
+		@include front-page-9;
 	}
 }

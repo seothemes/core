@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Structure;
+namespace SeoThemes\Engine\Structure;
 
 \add_action( 'genesis_meta', __NAMESPACE__ . '\front_page_loop', 5 );
 /**

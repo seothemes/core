@@ -6,12 +6,14 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$wrap-max-width: $mq-xl !default;
+
 .wrap {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	width: 90%;
-	max-width: $mq-xl;
+	max-width: $wrap-max-width;
 
 	@include margin(null auto);
 

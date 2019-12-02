@@ -6,29 +6,32 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$content-margin-mobile: $spacing-l null !default;
+$content-margin-desktop: $spacing-xl null !default;
+
 .content {
 	width: 100%;
 
-	@include margin($spacing--l null);
+	@include margin($content-margin-mobile);
 
 	@include mq(m) {
 
-		@include margin($spacing--xl null);
+		@include margin($content-margin-desktop);
 	}
 
 	.content-sidebar &,
 	.sidebar-content & {
 
 		@include mq(m) {
-			width: $layout--width--content;
-			max-width: $layout--max-width--content;
+			width: $layout-width-content;
+			max-width: $layout-max-width-content;
 		}
 	}
 
 	.narrow-content & {
 
 		@include mq(m) {
-			width: $layout--width--content;
+			width: $layout-width-content;
 		}
 	}
 
@@ -50,7 +53,6 @@
 	.is-archive & {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		width: 100%;
 	}
 

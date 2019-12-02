@@ -6,16 +6,24 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$menu-toggle-margin: 0 !default;
+$menu-toggle-padding: 0 !default;
+$menu-toggle-background-color: transparent !default;
+$menu-toggle-line-width: $spacing-m * $perfect-fifth !default;
+$menu-toggle-line-height: 3px !default;
+$menu-toggle-line-background-color: $color-heading !default;
+$menu-toggle-line-spacing: -$spacing-s !default;
+
 .menu-toggle {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0;
-	padding: 0;
-	background-color: transparent;
+	margin: $menu-toggle-margin;
+	padding: $menu-toggle-padding;
+	background-color: $menu-toggle-background-color;
 	order: 1;
 
-	@include size($spacing--m * $perfect-fifth);
+	@include size($spacing-m * $perfect-fifth);
 
 	@include mq(m) {
 		display: none;
@@ -26,7 +34,7 @@
 	}
 
 	&:focus {
-		outline: $base--border;
+		outline: $base-border;
 	}
 
 	.hamburger,
@@ -34,9 +42,9 @@
 	.hamburger:after {
 		display: block;
 		position: absolute;
-		width: $spacing--m * $perfect-fifth;
-		height: 3px;
-		background-color: $color--text;
+		width: $menu-toggle-line-width;
+		height: $menu-toggle-line-height;
+		background-color: $menu-toggle-line-background-color;
 		content: "";
 	}
 
@@ -47,11 +55,11 @@
 		margin: auto;
 
 		&:before {
-			top: -$spacing--s;
+			top: $menu-toggle-line-spacing;
 		}
 
 		&:after {
-			bottom: -$spacing--s;
+			bottom: $menu-toggle-line-spacing;
 		}
 	}
 

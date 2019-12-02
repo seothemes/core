@@ -6,9 +6,11 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$breadcrumb-margin: 0 0 $spacing-m !default;
+
 .breadcrumb {
 	width: 100%;
-	margin: 0 0 $spacing--m;
+	margin: $breadcrumb-margin;
 
 	// Link wrapper.
 	&-link-wrap {}

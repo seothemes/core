@@ -9,3 +9,10 @@
 .post-edit-link {
 	display: none;
 }
+
+#wpadminbar {
+
+	.sticky-header & {
+		position: fixed;
+	}
+}

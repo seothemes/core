@@ -6,17 +6,23 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$list-margin: 0 0 $spacing-m !default;
+$list-padding: 0 !default;
+$list-list-style-position: inside !default;
+$sub-list-margin: $spacing-s $spacing-m !default;
+$description-term-font-weight: $font-weight-heading !default;
+
 ul,
 ol,
 dl {
-	margin: 0 0 $spacing--m;
-	padding: 0;
-	list-style-position: inside;
+	margin: $list-margin;
+	padding: $list-padding;
+	list-style-position: $list-list-style-position;
 
 	ul,
 	ol,
 	dl {
-		margin: $spacing--s $spacing--m;
+		margin: $sub-list-margin;
 	}
 }
 
@@ -26,5 +32,5 @@ dt {
 }
 
 dt {
-	font-weight: $font-weight--semibold;
+	font-weight: $description-term-font-weight;
 }

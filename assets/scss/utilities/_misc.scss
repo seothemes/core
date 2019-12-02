@@ -51,11 +51,11 @@
 	> div {
 		width: $one-half;
 		margin: 0 $gutter $gutter 0;
-		padding: $spacing--m 0;
-		border-radius: $base--border--radius;
-		color: $color--white;
+		padding: $spacing-m 0;
+		border-radius: $base-border-radius;
+		color: $color-white;
 		font-size: smaller;
-		font-weight: $font-weight--heading;
+		font-weight: $font-weight-heading;
 		text-align: center;
 
 		&:nth-of-type(even) {
@@ -84,14 +84,14 @@
 
 .play-video {
 	background: transparent;
-	border: 2px solid $color--white;
+	border: 2px solid $color-white;
 	border-radius: 10rem;
 	padding: 0;
 
-	@include size($spacing--xxl);
+	@include size($spacing-xxl);
 
 	@include hover-focus {
-		background: $color--white;
-		color: $color--text;
+		background: $color-white;
+		color: $color-body;
 	}
 }

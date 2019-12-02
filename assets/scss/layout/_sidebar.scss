@@ -6,23 +6,44 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$sidebar-margin-mobile: $spacing-m null !default;
+$sidebar-margin-desktop: $spacing-l null !default;
+$sidebar-entry-title-margin-bottom: $spacing-xxs !default;
+$sidebar-entry-title-font-size: $base-font-size !default;
+$sidebar-entry-image-max-width: $spacing-xxl !default;
+
 .sidebar {
 
-	@include margin($spacing--m null);
+	@include margin($sidebar-margin-mobile);
 
 	@include mq(m) {
 
-		@include margin($spacing--l null);
+		@include margin($sidebar-margin-desktop);
 	}
 
 	.content-sidebar &,
 	.sidebar-content & {
 
 		@include mq(m) {
-			width: $layout--width--sidebar;
+			width: $layout-width-sidebar;
 		}
 	}
 
 	.full-width-content & {
+	}
+
+	// Entry.
+	.entry {
+
+		@include clearfix;
+
+		&-title {
+			margin-bottom: $sidebar-entry-title-margin-bottom;
+			font-size: $sidebar-entry-title-font-size;
+		}
+
+		&-image {
+			max-width: $sidebar-entry-image-max-width;
+		}
 	}
 }

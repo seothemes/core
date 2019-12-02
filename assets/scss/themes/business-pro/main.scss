@@ -6,9 +6,15 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+// Defaults.
 @import "../../../../node_modules/bourbon/core/bourbon";
 @import "../../abstracts/_index";
+
+// Custom.
 @import "variables";
+@import "mixins";
+
+// Elements.
 @import "../../base/_index";
 @import "../../layout/_index";
 @import "../../components/_index";

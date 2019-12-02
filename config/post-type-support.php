@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
+namespace SeoThemes\Engine;
 
 return [
 	'add'    => [
@@ -18,8 +18,9 @@ return [
 		'genesis-seo'                => [ 'product' ],
 		'genesis-singular-images'    => [ 'page', 'post' ],
 		'genesis-title-toggle'       => [ 'post', 'product' ],
-		'genesis-adjacent-entry-nav' => [ 'post', 'product' ],
+		'genesis-adjacent-entry-nav' => [ 'post', 'product', 'portfolio' ],
 		'hero-section'               => [ 'page', 'post', 'portfolio' ],
+		'terms-filter'               => [ 'post', 'portfolio' ],
 	],
 	'remove' => [],
 ];

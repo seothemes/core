@@ -6,12 +6,20 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$author-box-margin: $gutter 0 !default;
+$author-box-padding: $gap !default;
+$author-box-border: $base-border !default;
+$author-box-border-radius: $base-border-radius !default;
+$author-box-background-color: $color-background !default;
+$author-box-title-margin-bottom: $spacing-xs !default;
+$author-box-content-padding-left: $spacing-xl + $spacing-m !default;
+
 .author-box {
-	margin: $gutter 0;
-	padding: $gap;
-	border: $base--border;
-	border-radius: $base--border--radius;
-	background-color: $color--background;
+	margin: $author-box-margin;
+	padding: $author-box-padding;
+	border: $author-box-border;
+	border-radius: $author-box-border-radius;
+	background-color: $author-box-background-color;
 
 	.is-archive & {
 		margin-top: 0;
@@ -19,12 +27,12 @@
 
 	// Author box title.
 	&-title {
-		margin-bottom: $spacing--xs;
+		margin-bottom: $author-box-title-margin-bottom;
 	}
 
 	// Author box content.
 	&-content {
-		padding-left: $spacing--xl + $spacing--m;
+		padding-left: $author-box-content-padding-left;
 
 		p {
 

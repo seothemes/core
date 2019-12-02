@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Functions;
+namespace SeoThemes\Engine\Functions;
 
 \add_action( 'genesis_onboarding_before_import_content', __NAMESPACE__ . '\backup_featured_images' );
 /**

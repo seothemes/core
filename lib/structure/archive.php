@@ -1,18 +1,18 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Structure;
+namespace SeoThemes\Engine\Structure;
 
-use function SeoThemes\Core\Functions\get_config;
-use function SeoThemes\Core\Functions\is_type_archive;
+use function SeoThemes\Engine\Functions\get_config;
+use function SeoThemes\Engine\Functions\is_type_archive;
 
 // Reposition entry image.
 \remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
@@ -154,4 +154,18 @@ function widget_entry_wrap_open( $open, $args ) {
 	}
 
 	return $open;
+}
+
+add_action( 'genesis_before_content_sidebar_wrap', __NAMESPACE__ . '\display_terms_filter', 15 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function display_terms_filter() {
+	if ( is_type_archive() && post_type_supports( get_post_type(), 'terms-filter' ) ) {
+		echo do_shortcode( '[terms_filter]' );
+	}
 }

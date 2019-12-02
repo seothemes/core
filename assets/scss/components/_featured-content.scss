@@ -1,13 +1,15 @@
 ////
-/// Gallery component.
+/// Featured Content component.
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$featured-content-margin-bottom: $spacing-m !default;
+
 .featured-content {
-	margin-bottom: $spacing--m;
+	margin-bottom: $featured-content-margin-bottom;
 
 	.widget-wrap {
 		display: flex;
@@ -20,35 +22,19 @@
 	}
 
 	.entry {
+		width: 100%;
 
 		> a {
 			display: block;
 
 			img {
 				min-width: 100%;
-				border-radius: $base--border--radius $base--border--radius 0 0;
+				border-radius: $entry-image-border-radius;
 			}
 		}
 
 		> span {
 			display: none;
-		}
-	}
-
-	.sidebar & {
-
-		.entry {
-
-			@include clearfix;
-		}
-
-		.entry-image {
-			max-width: $spacing--xxl;
-		}
-
-		.entry-title {
-			margin-bottom: $spacing--xxs;
-			font-size: $base--font-size;
 		}
 	}
 }

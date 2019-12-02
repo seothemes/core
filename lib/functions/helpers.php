@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Functions;
+namespace SeoThemes\Engine\Functions;
 
 /**
  * Returns the child theme directory.
@@ -58,7 +58,7 @@ function get_plugin_data( $header = '' ) {
 	static $data = null;
 
 	if ( is_null( $data ) ) {
-		$data = get_file_data( get_plugin_dir() . 'seothemes-core.php', [
+		$data = get_file_data( get_plugin_dir() . 'seothemes-engine.php', [
 			'name'        => 'Plugin Name',
 			'version'     => 'Version',
 			'plugin-uri'  => 'Plugin URI',
@@ -135,7 +135,7 @@ function get_active_theme() {
 
 	if ( is_null( $theme ) ) {
 
-		$theme_support = \get_theme_support( 'seothemes-core' )[0];
+		$theme_support = \get_theme_support( 'seothemes-engine' )[0];
 
 		if ( $theme_support ) {
 			$theme = $theme_support;
@@ -183,21 +183,33 @@ function get_child_themes() {
  *
  * @since 1.0.0
  *
- * @param null $color
- *
- * @return null
+ * @return array
  */
-function get_default_color( $color = null ) {
+function get_default_colors() {
 	static $colors = null;
 
 	if ( is_null( $colors ) ) {
 		$theme  = get_active_theme();
-		$file   = get_plugin_dir() . 'variables.json';
-		$json   = json_decode( file_get_contents( $file ) );
-		$colors = $json->colors->$theme;
+		$file   = get_plugin_dir() . "assets/scss/themes/$theme/colors.json";
+		$colors = \json_decode( \file_get_contents( $file ), true );
 	}
 
-	return $color ? $colors->$color : $colors;
+	return $colors;
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param string $color
+ *
+ * @return mixed
+ */
+function get_default_color( $color = null ) {
+	$colors = get_default_colors();
+
+	return $colors[ 'color-' . $color ];
 }
 
 /**

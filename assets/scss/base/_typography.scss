@@ -6,41 +6,62 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$blockquote__padding: $gap !default;
-$blockquote__border-left: $base--border !default;
-$blockquote__background-color: transparent !default;
-$link__text-decoration--hover: underline !default;
+
+$link-color: $color-primary !default;
+$link-text-decoration: none !default;
+$link-color-hover: $color-primary !default;
+$link-text-decoration-hover: underline !default;
+$paragraph_margin: 0 0 $spacing-m !default;
+$horizontal-rule-margin: 0 0 $spacing-m !default;
+$horizontal-rule-padding: $spacing-m 0 0 !default;
+$horizontal-rule-border: $base-border !default;
+$strong-font-weight: $font-weight-bold !default;
+$emphasis-font-style: italic !default;
+$blockquote-margin: $spacing-m auto !default;
+$blockquote-padding: $gap !default;
+$blockquote-border-left: $base-border !default;
+$blockquote-background-color: transparent !default;
+$blockquote-font-style: italic !default;
+$blockquote-paragraph-padding: $spacing-s 0 !default;
+$cite-font-weight: bolder !default;
+$cite-font-style: normal !default;
+$cite-font-family: $font-family-heading !default;
+$code-padding: 0.05em 0.5em !default;
+$code-border-radius: $base-border-radius !default;
+$code-background-color: $color-background !default;
+$code-font-family: $font-family-code !default;
+$code-font-size: 90% !default;
+$preformatted-padding: $spacing-m !default;
 
 body {
 	height: 100%;
 	margin: 0;
-	color: $color--text;
-	background-color: $color--white;
-	font-family: $base--font-family;
-	font-size: $base--font-size;
-	font-weight: $base--font-weight;
-	line-height: $base--line-height;
+	color: $color-body;
+	background-color: $color-white;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
 
 	@include mq(m) {
-		font-size: $base--font-size * strip-unit(map_get($font-sizes, h6));
+		font-size: $base-font-size * strip-unit(map_get($font-sizes, h6));
 	}
 }
 
 a {
-	color: $color--primary;
-	text-decoration: none;
+	color: $link-color;
+	text-decoration: $link-text-decoration;
 
 	@include transition();
 
 	@include hover-focus {
-		color: $color--primary;
-		text-decoration: $link__text-decoration--hover;
+		color: $link-color-hover;
+		text-decoration: $link-text-decoration-hover;
 	}
 }
 
 p {
-	margin: 0 0 $spacing--m;
-	padding: 0;
+	margin: $paragraph_margin;
 
 	&:empty {
 		display: none;
@@ -49,34 +70,33 @@ p {
 
 hr {
 	clear: both;
-	margin: 0 0 $spacing--m;
-	padding: $spacing--m 0 0;
+	margin: $horizontal-rule-margin;
+	padding: $horizontal-rule-padding;
 	border: 0;
-	border-bottom: $base--border;
+	border-bottom: $horizontal-rule-border;
 	border-collapse: collapse;
 }
 
 b,
 strong {
-	font-weight: $font-weight--bold;
+	font-weight: $strong-font-weight;
 }
 
-blockquote,
-cite,
 em,
 i {
-	font-style: italic;
+	font-style: $emphasis-font-style;
 }
 
 blockquote {
-	border-left: $blockquote__border-left;
-	background-color: $blockquote__background-color;
+	border-left: $blockquote-border-left;
+	background-color: $blockquote-background-color;
+	font-style: $blockquote-font-style;
 
-	@include margin($spacing--m auto);
-	@include padding($blockquote__padding);
+	@include margin($blockquote-margin);
+	@include padding($blockquote-padding);
 
 	p {
-		padding: $spacing--s 0;
+		padding: $blockquote-paragraph-padding;
 
 		&:last-of-type {
 			margin-bottom: 0;
@@ -86,34 +106,34 @@ blockquote {
 
 cite {
 	display: block;
-	font-weight: bolder;
-	font-style: normal;
-	font-family: $font-family--heading;
+	font-weight: $cite-font-weight;
+	font-style: $cite-font-style;
+	font-family: $cite-font-family;
 }
 
 code,
 kbd,
 samp {
-	padding: 0.05em 0.5em;
-	border-radius: $base--border--radius;
-	background-color: $color--light;
-	font-family: $font-family--code;
-	font-size: 90%;
+	padding: $code-padding;
+	border-radius: $code-border-radius;
+	background-color: $code-background-color;
+	font-family: $code-font-family;
+	font-size: $code-font-size;
 }
 
 pre {
 	overflow-x: scroll;
-	padding: $spacing--m;
-	border-radius: $base--border--radius;
-	background-color: $color--light;
-	font-family: $font-family--code;
+	padding: $preformatted-padding;
+	border-radius: $code-border-radius;
+	background-color: $code-background-color;
+	font-family: $code-font-family;
 
 	code,
 	kbd,
 	samp {
 		padding: 0;
 		background-color: transparent;
-		font-size: 90%;
+		font-size: $code-font-size;
 	}
 }
 

@@ -16,16 +16,16 @@
 @import "../../base/button";
 @import "../../components/block";
 
-.editor-post-title__block .editor-post-title__input,
+.editor-post-title-block .editor-post-title-input,
 body {
-	color: $color--text;
-	font-family: $base--font-family;
+	color: $color-body;
+	font-family: $base-font-family;
 }
 
 blockquote {
 	font-style: italic;
 }
 
-.wp-block-button__link {
+.wp-block-button-link {
 	font-size: 1em;
 }

@@ -6,7 +6,9 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$site-footer-border-top: $base-border !default;
+
 .site-footer {
 	margin-top: auto;
-	border-top: $base--border;
+	border-top: $site-footer-border-top;
 }

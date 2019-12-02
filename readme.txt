@@ -45,7 +45,7 @@ Everything in this plugin is a hook, you can add/remove/modify them the same way
 
 One thing worth noting is that this plugin uses namespaces to avoid naming conflicts. This means that the namespace needs to be included in the name of the function to modify. For example:
 
-`remove_filter( 'get_custom_logo', '\SeoThemes\Core\Structure\custom_logo_size' );`
+`remove_filter( 'get_custom_logo', '\SeoThemes\Engine\Structure\custom_logo_size' );`
 
 The namespace can be found at the top of each file in the plugin.
 

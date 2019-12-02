@@ -6,18 +6,24 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$menu__font-family: $base--font-family !default;
-$menu__font-weight: $base--font-weight !default;
-$menu__font-size: $base--font-size / $major-second !default;
-$menu-item-link__color: $color--text !default;
-$menu-item-link__color--hover: $color--primary !default;
+$menu-font-family: $base-font-family !default;
+$menu-font-weight: $base-font-weight !default;
+$menu-font-size-desktop: $base-font-size / $major-second !default;
+$menu-line-height: 1 !default;
+$menu-item-padding-mobile: $spacing-m 0 !default;
+$menu-item-padding-desktop: $spacing-m $spacing-s * $golden !default;
+$menu-item-margin-mobile: null auto !default;
+$menu-item-margin-desktop: 0 !default;
+$menu-item-link-color: $color-body !default;
+$menu-item-link-color-hover: $color-primary !default;
 
 // Menu
 .menu {
 	margin: 0;
 	list-style-type: none;
-	font-family: $menu__font-family;
-	font-weight: $menu__font-weight;
+	font-family: $menu-font-family;
+	font-weight: $menu-font-weight;
+	line-height: $menu-line-height;
 
 	@include mq(m) {
 		display: flex;
@@ -25,7 +31,7 @@ $menu-item-link__color--hover: $color--primary !default;
 		justify-content: flex-end;
 		align-items: center;
 		border: 0;
-		font-size: $menu__font-size;
+		font-size: $menu-font-size-desktop;
 	}
 
 	// Menu item.
@@ -34,14 +40,15 @@ $menu-item-link__color--hover: $color--primary !default;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		padding: $spacing--xs 0;
+		padding: $menu-item-padding-mobile;
+		position: relative;
 
-		@include margin(null auto);
+		@include margin($menu-item-margin-mobile);
 
 		@include mq(m) {
 			display: block;
-			margin: 0;
-			padding: $spacing--m $spacing--s * $golden;
+			margin: $menu-item-margin-desktop;
+			padding: $menu-item-padding-desktop;
 
 			&:last-of-type {
 				padding-right: 0;
@@ -65,7 +72,7 @@ $menu-item-link__color--hover: $color--primary !default;
 						margin-bottom: 0.1em;
 
 						@include transition;
-						@include triangle("down", $spacing--xs, $spacing--xxs, $menu-item-link__color);
+						@include triangle("down", $spacing-xs, $spacing-xxs, $menu-item-link-color);
 					}
 				}
 			}
@@ -75,7 +82,7 @@ $menu-item-link__color--hover: $color--primary !default;
 			padding: 0;
 
 			@include mq(m) {
-				margin-left: $spacing--m;
+				margin-left: $spacing-m;
 			}
 		}
 	}
@@ -84,19 +91,19 @@ $menu-item-link__color--hover: $color--primary !default;
 	a {
 		display: block;
 		width: 100%;
-		color: $menu-item-link__color;
+		color: $menu-item-link-color;
 		text-decoration: none;
 	}
 
 	a:hover,
 	a:focus,
 	.current-menu-item > a {
-		color: $menu-item-link__color--hover;
+		color: $menu-item-link-color-hover;
 
 		span {
 
 			&:after {
-				border-top-color: $menu-item-link__color--hover;
+				border-top-color: $menu-item-link-color-hover;
 			}
 		}
 	}

@@ -18,9 +18,9 @@
 		@include hide-visually(unhide);
 
 		position: absolute;
-		padding: $spacing--s;
-		color: $color--white;
-		background-color: $color--muted;
+		padding: $spacing-s;
+		color: $color-white;
+		background-color: $color-muted;
 		text-decoration: none;
 	}
 }
@@ -40,5 +40,5 @@
 }
 
 :focus {
-	outline: $base--border;
+	outline: $base-border;
 }

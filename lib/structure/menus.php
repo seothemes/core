@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Structure;
+namespace SeoThemes\Engine\Structure;
 
 // Reposition primary and secondary navigation menus.
 \remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -33,4 +33,22 @@ function replace_hash_with_void( $menu_item ) {
 	}
 
 	return $menu_item;
+}
+
+add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\menu_depth' );
+/**
+ * Reduces secondary navigation menu to one level depth.
+ *
+ * @since 2.2.3
+ *
+ * @param array $args Original menu options.
+ *
+ * @return array Menu options with depth set to 1.
+ */
+function menu_depth( $args ) {
+	if ( 'primary' !== $args['theme_location'] && 'secondary' !== $args['theme_location'] ) {
+		$args['depth'] = 1;
+	}
+
+	return $args;
 }

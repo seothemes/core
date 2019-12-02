@@ -21,67 +21,107 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: config/theme-support.php:55
+#: config/theme-support.php:73
 msgid "Header Menu"
 msgstr ""
 
-#: config/theme-support.php:56
+#: config/theme-support.php:74
 msgid "After Header Menu"
 msgstr ""
 
-#: config/widget-areas.php:22
-msgid "Front Page "
-msgstr ""
-
-#. translators: The front page widget area number.
-#: config/widget-areas.php:24
-msgid "The Front Page %s widget area."
-msgstr ""
-
-#: config/widget-areas.php:33
+#: config/widget-areas.php:18
 msgid "Before Header"
 msgstr ""
 
-#: config/widget-areas.php:34
+#: config/widget-areas.php:19
 msgid "The Before Header widget area."
 msgstr ""
 
-#: config/widget-areas.php:38
+#: config/widget-areas.php:23
 msgid "Before Footer"
 msgstr ""
 
-#: config/widget-areas.php:39
+#: config/widget-areas.php:24
 msgid "The Before Footer widget area."
 msgstr ""
 
-#: lib/admin/notices.php:20
-msgid "Please install a valid SEO Themes child theme when using SEO Themes core."
+#: lib/admin/notices.php:28
+msgid "Please install a valid SEO Themes child theme when using SEO Themes Engine."
 msgstr ""
 
-#: lib/admin/widget-classes.php:27
+#: lib/admin/widget-classes.php:36
 msgid "Additional Classes:"
+msgstr ""
+
+#: lib/customize/colors.php:39
+msgid " Color"
+msgstr ""
+
+#: lib/customize/header.php:26
+msgid "Header Settings"
+msgstr ""
+
+#: lib/customize/header.php:35
+msgid "Transparent Header"
+msgstr ""
+
+#: lib/customize/header.php:45
+msgid "Sticky Header"
+msgstr ""
+
+#: lib/customize/register.php:26
+msgid "Child Theme Settings"
+msgstr ""
+
+#: lib/customize/widgets.php:30
+msgid "Widget Settings"
+msgstr ""
+
+#: lib/customize/widgets.php:39
+msgid "Front Page Widget Areas"
+msgstr ""
+
+#: lib/customize/widgets.php:40, lib/customize/widgets.php:51
+msgid "Default: "
+msgstr ""
+
+#: lib/customize/widgets.php:50
+msgid "Footer Widget Areas"
 msgstr ""
 
 #: lib/functions/header.php:105
 msgid "Hero Image"
 msgstr ""
 
-#: lib/shortcodes/terms-filter.php:46
+#: lib/functions/widgets.php:36
+msgid "Front Page "
+msgstr ""
+
+#. translators: The front page widget area number.
+#: lib/functions/widgets.php:38
+msgid "The Front Page %s widget area."
+msgstr ""
+
+#: lib/shortcodes/back-to-top.php:31
+msgid "Return to top"
+msgstr ""
+
+#: lib/shortcodes/terms-filter.php:51
 msgid "All"
 msgstr ""
 
-#: lib/structure/hero.php:116
+#: lib/structure/hero.php:118
 msgid "Latest Posts"
 msgstr ""
 
-#: lib/structure/hero.php:119
+#: lib/structure/hero.php:121
 msgid "Not found, error 404"
 msgstr ""
 
-#: lib/structure/hero.php:122
+#: lib/structure/hero.php:124
 msgid "Search results for: "
 msgstr ""
 
-#: lib/structure/hero.php:157
+#: lib/structure/hero.php:159
 msgid "Showing the latest posts"
 msgstr ""

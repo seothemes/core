@@ -1,20 +1,38 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core;
+namespace SeoThemes\Engine;
 
-use function SeoThemes\Core\Functions\get_plugin_url;
+use function SeoThemes\Engine\Functions\get_plugin_url;
 
 return [
 	'add'    => [
+
+		// Genesis defaults.
+		'menus',
+		'post-thumbnails',
+		'title-tag',
+		'automatic-feed-links',
+		'body-open',
+		'genesis-inpost-layouts',
+		'genesis-archive-layouts',
+		'genesis-admin-menu',
+		'genesis-seo-settings-menu',
+		'genesis-import-export-menu',
+		'genesis-readme-menu',
+		'genesis-customizer-theme-settings',
+		'genesis-customizer-seo-settings',
+		'genesis-auto-updates',
+
+		// Custom.
 		'align-wide',
 		'automatic-feed-links',
 		'custom-header'            => [
@@ -75,10 +93,6 @@ return [
 		],
 		'post-thumbnails',
 		'responsive-embeds',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'sticky-header',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'transparent-header',
 		'woocommerce',
 		'wc-product-gallery-zoom',
 		'wc-product-gallery-lightbox',

@@ -6,30 +6,36 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$site-title__font-size: 1em !default;
-$site-title__font-family: $font-family--heading !default;
-$site-title__color: $color--text !default;
-$site-title__color--hover: $color--primary !default;
-$site-description__color: $color--text !default;
+$title-area-line-height: $line-height-heading !default;
+$title-area-padding-mobile: $spacing-m null !default;
+$title-area-padding-desktop: $gap null !default;
+$site-title-font-size: 1em !default;
+$site-title-font-family: $font-family-heading !default;
+$site-title-font-weight: $font-weight-heading !default;
+$site-title-color: $color-body !default;
+$site-title-color-hover: $color-primary !default;
+$site-description-color: $color-body !default;
+$site-description-font-size: small !default;
 
 // Title area.
 .title-area {
-	line-height: $line-height--heading;
+	line-height: $title-area-line-height;
 
-	@include padding($spacing--m null);
+	@include padding($title-area-padding-mobile);
+	@include transition;
 
 	@include mq(m) {
 
-		@include padding($gap null);
+		@include padding($title-area-padding-desktop);
 	}
 }
 
 // Site title.
 .site-title {
 	margin: 0;
-	font-size: $site-title__font-size;
-	font-weight: $font-weight--semibold;
-	font-family: $site-title__font-family;
+	font-size: $site-title-font-size;
+	font-weight: $site-title-font-weight;
+	font-family: $site-title-font-family;
 
 	.wp-custom-logo & {
 
@@ -37,10 +43,10 @@ $site-description__color: $color--text !default;
 	}
 
 	a {
-		color: $site-title__color;
+		color: $site-title-color;
 
 		@include hover-focus {
-			color: $site-title__color--hover;
+			color: $site-title-color-hover;
 		}
 	}
 }
@@ -48,8 +54,8 @@ $site-description__color: $color--text !default;
 // Site description.
 .site-description {
 	margin: 0;
-	font-size: small;
-	color: $site-description__color;
+	font-size: $site-description-font-size;
+	color: $site-description-color;
 
 	.wp-custom-logo & {
 

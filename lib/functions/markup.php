@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Functions;
+namespace SeoThemes\Engine\Functions;
 
 \add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 /**
@@ -65,19 +65,22 @@ function body_classes( $classes ) {
 	// Add no hero section class.
 	$classes[] = 'no-hero-section';
 
+	// Add front page 1 slider class.
+	$classes[] = sidebar_has_widget( 'front-page-1', 'seo_slider' ) ? 'has-home-slider' : '';
+
 	return $classes;
 }
 
-\add_action( 'genesis_before', __NAMESPACE__ . '\narrow_content' );
+add_filter( 'genesis_attr_site-container', __NAMESPACE__ . '\back_to_top_anchor' );
 /**
- * Remove sidebars on narrow content layout.
+ * Description of expected behavior.
  *
- * @since 3.5.0
+ * @since 1.0.0
  *
- * @return void
+ * @return array
  */
-function narrow_content() {
-	if ( 'narrow-content' === \genesis_site_layout() ) {
-		\add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
-	}
+function back_to_top_anchor( $attr ) {
+	$attr['id'] = 'top';
+
+	return $attr;
 }

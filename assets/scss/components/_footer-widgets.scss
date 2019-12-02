@@ -6,60 +6,72 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$footer-widgets__padding: $spacing--xl !default;
-$footer-widgets__background-color: transparent !default;
-$footer-widgets__color: $color--text !default;
-$footer-widgets__font-size: $base--font-size !default;
-$footer-widgets-title__color: $color--heading !default;
-$footer-widgets-title__font-size: $font-size--h5 !default;
-$footer-widgets-link__color: $color--primary !default;
-$footer-widgets-link__color--hover: $color--primary !default;
-$footer-widgets-menu__font-size: $base--font-size !default;
-$footer-widgets-menu__font-family: $base--font-family !default;
-$footer-widgets-menu__font-weight: $base--font-weight !default;
+$footer-widgets-padding: $spacing-xl 0 $spacing-xl - $gutter !default;
+$footer-widgets-background-color: transparent !default;
+$footer-widgets-color: $color-body !default;
+$footer-widgets-font-size: $base-font-size !default;
+$footer-widgets-title-color: $color-heading !default;
+$footer-widgets-title-font-size: $font-size-h5 !default;
+$footer-widgets-link-color: $color-primary !default;
+$footer-widgets-link-color-hover: $color-primary !default;
+$footer-widgets-input-color: $input-color !default;
+$footer-widgets-input-background-color: $input-background-color !default;
+$footer-widgets-menu-columns: 2 !default;
+$footer-widgets-menu-font-size: $base-font-size !default;
+$footer-widgets-menu-font-family: $base-font-family !default;
+$footer-widgets-menu-font-weight: $base-font-weight !default;
+$footer-widgets-menu-item-padding: 0 !default;
+$footer-widgets-menu-item-margin: 0 0 $spacing-m !default;
+
 
 .footer-widgets {
-	padding: $footer-widgets__padding 0;
-	background-color: $footer-widgets__background-color;
-	color: $footer-widgets__color;
-	font-size: $footer-widgets__font-size;
+	padding: $footer-widgets-padding;
+	background-color: $footer-widgets-background-color;
+	color: $footer-widgets-color;
+	font-size: $footer-widgets-font-size;
 
 	// Title
 	.widget-title {
-		color: $footer-widgets-title__color;
-		font-size: $footer-widgets-title__font-size;
+		color: $footer-widgets-title-color;
+		font-size: $footer-widgets-title-font-size;
 	}
 
 	// Link
 	a {
-		color: $footer-widgets-link__color;
+		color: $footer-widgets-link-color;
 
 		@include hover-focus {
-			color: $footer-widgets-link__color--hover;
+			color: $footer-widgets-link-color-hover;
 		}
+	}
+
+	#{$all-text-inputs} {
+		background-color: $footer-widgets-input-background-color;
+		color: $footer-widgets-input-color;
 	}
 
 	// Menu
 	.menu {
 		display: block;
-		columns: 2;
-		font-size: $footer-widgets-menu__font-size;
-		font-family: $footer-widgets-menu__font-family;
-		font-weight: $footer-widgets-menu__font-weight;
+		columns: $footer-widgets-menu-columns;
+		font-size: $footer-widgets-menu-font-size;
+		font-family: $footer-widgets-menu-font-family;
+		font-weight: $footer-widgets-menu-font-weight;
 	}
 
 	.menu-item {
-		padding: 0;
-		margin-bottom: $spacing--m;
+		margin: $footer-widgets-menu-item-margin;
+		padding: $footer-widgets-menu-item-padding;
 	}
 }
 
 // Footer widget area.
 .footer-widget-area {
+	width: 100%;
 
 	@include mq(m) {
 		flex: 1;
-		margin-left: $spacing--l;
+		margin-left: $gutter;
 
 		&:first-of-type {
 			margin-left: 0;

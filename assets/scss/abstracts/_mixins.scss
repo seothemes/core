@@ -29,9 +29,9 @@
 
 @mixin box {
 	padding: $gap;
-	border: $base--border;
-	border-radius: $base--border--radius;
-	background-color: $color--background;
+	border: $base-border;
+	border-radius: $base-border-radius;
+	background-color: $color-background;
 
 	p {
 
@@ -51,22 +51,9 @@
 
 @mixin heading {
 	margin: 0 0 0.5em;
-	font-family: $font-family--heading;
-	font-weight: $font-weight--heading;
-	line-height: $line-height--heading;
-}
-
-////
-/// Hook mixin
-///
-/// @group  Tools
-/// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
-////
-
-@mixin hook($name: "") {
-
-	@content;
+	font-family: $font-family-heading;
+	font-weight: $font-weight-heading;
+	line-height: $line-height-heading;
 }
 
 ////
@@ -185,7 +172,7 @@
 ////
 
 @mixin notice($color: "medium") {
-	margin-bottom: $spacing--m;
+	margin-bottom: $spacing-m;
 
 	@include box;
 
@@ -210,7 +197,7 @@
 
 	&:before {
 		display: block;
-		background-color: $color--overlay;
+		background-color: $color-overlay;
 		content: "";
 
 		@include position(absolute, 0 0 0 0);
@@ -226,5 +213,5 @@
 ////
 
 @mixin transition {
-	transition: all $base--transition-duration $base--transition-timing-function;
+	transition: all $base-transition-duration $base-transition-timing-function;
 }

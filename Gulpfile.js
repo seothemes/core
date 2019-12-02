@@ -15,7 +15,7 @@ toolkit.extendConfig(
       i18n: './assets/lang/'
     },
     js: {
-      'core': [
+      'main': [
         './assets/js/hide-show.js',
         './assets/js/smooth-scroll.js',
         './assets/js/sticky-header.js',
@@ -36,13 +36,13 @@ toolkit.extendConfig(
       },
       scss: {
         'business-pro-main': {
-          vars: require('./assets/scss/themes/business-pro/variables.json'),
+          vars: require('./assets/scss/themes/business-pro/colors.json'),
           src: './assets/scss/themes/business-pro/main.scss',
           dest: './assets/css/business-pro/',
           outputStyle: 'compressed',
         },
         'business-pro-editor': {
-          vars: require('./assets/scss/themes/business-pro/variables.json'),
+          vars: require('./assets/scss/themes/business-pro/colors.json'),
           src: './assets/scss/themes/business-pro/editor.scss',
           dest: './assets/css/business-pro/',
           outputStyle: 'compressed'

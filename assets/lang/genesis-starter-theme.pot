@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Genesis Starter Theme 3.5.0\n"
+"Project-Id-Version: SEO Themes Engine.3.5.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/theme/genesis-starter-theme\n"
 "POT-Creation-Date: 2019-09-04 05:08:55+00:00\n"
@@ -92,7 +92,7 @@ msgid "Genesis Starter Theme"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://genesisstartertheme.com/"
+msgid "https://seothemes.com/"
 msgstr ""
 
 #. Description of the plugin/theme

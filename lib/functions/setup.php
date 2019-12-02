@@ -1,15 +1,15 @@
 <?php
 /**
- * Genesis Starter Theme.
+ * SEO Themes Engine.
  *
- * @package   SeoThemes\Core
- * @link      https://genesisstartertheme.com
+ * @package   SeoThemes\Engine
+ * @link      https://seothemes.com
  * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-2.0-or-later
  */
 
-namespace SeoThemes\Core\Functions;
+namespace SeoThemes\Engine\Functions;
 
 \add_action( 'child_theme_setup', __NAMESPACE__ . '\setup' );
 /**
@@ -110,8 +110,8 @@ function setup() {
 	// Add widget areas.
 	\array_walk(
 		$widget_areas['add'],
-		function ( $id ) {
-			\genesis_register_widget_area( $id );
+		function ( $widget_area ) {
+			\genesis_register_widget_area( $widget_area );
 		}
 	);
 

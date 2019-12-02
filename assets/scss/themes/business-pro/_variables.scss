@@ -6,63 +6,78 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
-$base--font-family: hind, $font-stack-system;
-$font-family--heading: montserrat, $font-stack-system;
+$base-font-family: hind, $font-stack-system;
+$font-family-heading: montserrat, $font-stack-system;
 
-$button__font-family: $font-family--heading;
+$button-font-family: $font-family-heading;
 
-$link__text-decoration--hover: none;
+$input-placeholder-color: $color-muted;
+$input-border-color: $color-muted;
 
-$blockquote__padding: $gutter;
-$blockquote__border-left: 0;
-$blockquote__background-color: $color--white;
+$link-text-decoration-hover: none;
 
-$sticky-header__background-color: $color--dark;
-$sticky-header__border-bottom: 0;
+$blockquote-padding: $gutter;
+$blockquote-border-left: 0;
+$blockquote-background-color: $color-white;
 
-$site-title__color: $color--white;
-$site-description__color: $color--white;
+$site-header-background-color: $color-heading;
+$site-header-border-bottom: 0;
 
-$menu__font-family: $font-family--heading;
-$menu__font-weight: $font-weight--heading;
-$menu__font-size: 0.75em;
-$menu-item-link__color: $color--border;
-$menu-item-link__color--hover: $color--white;
+$sticky-header-background-color: $color-heading;
+$sticky-header-border-bottom: 0;
 
-$sub-menu__border: 0;
-$sub-menu__border-radius: 4px;
+$site-title-color: $color-white;
+$site-description-color: $color-white;
 
-$hero-section__color: $color--white;
-$hero-heading__color: $color--white;
-$hero-heading__font-size: 5.4rem;
+$nav-primary-background-color-mobile: $color-heading;
 
-$front-page-widget-area__padding--desktop: $spacing--xxl * $minor-third;
-$front-page-1__spacing--desktop: $spacing--xxxl * $minor-third;
-$front-page-3__background-color: $color--background;
-$front-page-widget-area__border-bottom: 0;
-$front-page-4__padding--desktop: $spacing--xxxl * $minor-third;
-$front-page-5__background-color: $color--white;
-$front-page-6__background-color: $color--background;
+$menu-font-family: $font-family-heading;
+$menu-font-weight: $font-weight-heading;
+$menu-font-size: 0.75em;
+$menu-item-link-color: $color-border;
+$menu-item-link-color-hover: $color-white;
 
-$entry__border: 0;
-$entry-title__font-size: $font-size--h6;
+$sub-menu-border: 0;
+$sub-menu-border-radius: 4px;
 
-$before-footer__padding: 10rem;
-$before-footer__border-bottom: 0;
-$before-footer__background-color: transparent;
-$before-footer__color: $color--white;
-$before-footer-title__font-size: $font-size--h3;
+$menu-toggle-line-background-color: $color-white;
 
-$footer-widgets__padding: $spacing--xxl;
-$footer-widgets__background-color: $color--dark;
-$footer-widgets__color: $color--medium;
-$footer-widgets-title__color: $color--white;
-$footer-widgets-title__font-size: $base--font-size;
-$footer-widgets-link__color: $color--medium;
-$footer-widgets-link__color--hover: $color--light;
+$sub-menu-toggle-icon-background-color: $color-white;
 
-$footer-credits__padding-bottom: $spacing--xl;
-$footer-credits__background-color: $color--dark;
-$footer-credits__color: $color--medium;
-$footer-credits-link__color: $color--medium;
-$footer-credits-link__color--hover: $color--light;
+$hero-section-color: $color-white;
+$hero-heading-color: $color-white;
+$hero-heading-font-size-desktop: 5.4rem;
+
+$front-page-widget-area-padding-desktop: $spacing-xxl * $minor-third 0 $spacing-xxl * $minor-third - $gutter;
+$front-page-widget-area-border-bottom: 0;
+
+$terms-filter-border-bottom: 0;
+$terms-filter-link-font-family: $font-family-heading;
+$terms-filter-link-font-size: smaller;
+
+$entry-border: 0;
+$entry-title-font-size: $font-size-h6;
+
+$pagination-border-top: 0;
+$pagination-font-family: $font-family-heading;
+
+$before-footer-padding: $spacing-xxl 0 $spacing-xxl - $gutter;
+$before-footer-border-bottom: 0;
+$before-footer-background-color: transparent;
+$before-footer-color: $color-white;
+$before-footer-title-font-size: $font-size-h3;
+
+$footer-widgets-padding: $spacing-xxl 0 $spacing-xxl - $gutter;
+$footer-widgets-background-color: $color-heading;
+$footer-widgets-color: $color-muted;
+$footer-widgets-title-color: $color-white;
+$footer-widgets-title-font-size: $base-font-size;
+$footer-widgets-link-color: $color-muted;
+$footer-widgets-link-color-hover: $color-white;
+$footer-widgets-input-background-color: transparent;
+
+$footer-credits-padding-bottom: $spacing-xl;
+$footer-credits-background-color: $color-heading;
+$footer-credits-color: $color-muted;
+$footer-credits-link-color: $color-muted;
+$footer-credits-link-color-hover: $color-white;

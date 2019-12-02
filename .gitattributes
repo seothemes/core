@@ -20,6 +20,6 @@ package-lock.json export-ignore
 package.json export-ignore
 phpcs.xml export-ignore
 phpunit.xml.dist export-ignore
-seothemes-core.zip export-ignore
+seothemes-engine.zip export-ignore
 stylelint.config.js export-ignore
 yarn.lock export-ignore

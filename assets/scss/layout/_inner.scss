@@ -6,6 +6,9 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$site-inner-margin-top-no-hero-mobile: $spacing-xl * $perfect-fifth !default;
+$site-inner-margin-top-no-hero-desktop: $spacing-xxl !default;
+
 .site-inner {
 
 	@include mq(m) {
@@ -16,10 +19,10 @@
 
 	.no-hero-section.transparent-header &,
 	.no-hero-section.sticky-header & {
-		margin-top: $spacing--xl * $perfect-fifth;
+		margin-top: $site-inner-margin-top-no-hero-mobile;
 
 		@include mq(m) {
-			margin-top: $spacing--xxl;
+			margin-top: $site-inner-margin-top-no-hero-desktop;
 		}
 	}
 }

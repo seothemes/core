@@ -6,7 +6,7 @@
  * Version:     1.0.0
  * Author:      SEO Themes
  * Author URI:  https://seothemes.com/
- * Text Domain: seothemes-core
+ * Text Domain: seothemes-engine
  * Domain Path: assets/lang
  */
 

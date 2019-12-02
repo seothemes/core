@@ -6,13 +6,16 @@
 /// @link   https://github.com/seothemes/genesis-starter-theme
 ////
 
+$nav-primary-padding-mobile: $spacing-m 5vw !default;
+$nav-primary-background-color-mobile: $color-white !default;
+
 .nav-primary {
 	order: 2;
 	display: none;
 	width: 100vw;
 	margin: 0 -5vw;
-	padding: $spacing--m 5vw;
-	background-color: $color--white;
+	padding: $nav-primary-padding-mobile;
+	background-color: $nav-primary-background-color-mobile;
 
 	@include mq(m) {
 		display: flex !important;
